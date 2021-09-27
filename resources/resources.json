@@ -1,0 +1,2861 @@
+{
+  "gameConfigPath" : "game.cfg",
+
+  "shaders" : [
+		{
+			"name" 		    : "spriteShader",
+			"filePath_vs" : "shaders/sprite.vert",
+			"filePath_fs" : "shaders/sprite.frag"
+		},
+		{
+			"name" 		    : "textShader",
+			"filePath_vs" : "shaders/text.vert",
+			"filePath_fs" : "shaders/text.frag"
+		}
+	],
+
+  "fonts": [
+    {
+      "name"          : "pixel_font",
+      "filePath"      : "textures/pixel_font.png",
+      "characterSize" : 8,
+      "characters" : [
+        "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
+        "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
+        "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".", ",", ";",
+        ":", "@", "#", "'", "!", "\"","/", "?", "{", "}", "%", "&", "*",
+        "(", ")", "$", "—", "-", "+", " ", "l", "r", "u", "b", "_"
+      ]
+    }
+  ],
+
+  "textures": [
+    {
+      "name"            : "mapTextureAtlas_8x8",
+      "filePath"        : "textures/map_8x8.png",
+      "subTextureWidth" : 8,
+      "subTextureHeight": 8,
+      "subTextures": [
+        "brickWall_All",
+        "brickWall_TopLeft",
+        "brickWall_TopRight",
+        "brickWall_Top",
+        "brickWall_BottomLeft",
+        "brickWall_Left",
+
+        "brickWall_TopRight_BottomLeft",
+        "brickWall_Top_BottomLeft",
+        "brickWall_BottomRight",
+        "brickWall_TopLeft_BottomRight",
+        "brickWall_Right",
+        "brickWall_Top_BottomRight",
+
+        "brickWall_Bottom",
+        "brickWall_TopLeft_Bottom",
+        "brickWall_TopRight_Bottom",
+        "empty",
+        "concreteWall",
+        "ice",
+
+        "water1",
+        "water2",
+        "water3",
+        "trees",
+        "player_tank_icon",
+        "enemy_tank_icon",
+
+        "bullet_top",
+        "bullet_bottom",
+        "bullet_left",
+        "bullet_right",
+        "border",
+        "black_fill"
+      ]
+    },
+    {
+      "name"            : "mapTextureAtlas_16x16",
+      "filePath"        : "textures/map_16x16.png",
+      "subTextureWidth" : 16,
+      "subTextureHeight": 16,
+      "subTextures" : [
+        "respawn1",
+        "respawn2",
+        "respawn3",
+        "respawn4",
+        "shield1",
+        "shield2",
+
+        "bonus_helmet",
+        "bonus_clock",
+        "bonus_star",
+        "bonus_grenade",
+        "bonus_shovel",
+        "bonus_tank",
+
+        "explosion1",
+        "explosion2",
+        "explosion3",
+        "eagle",
+        "eagle_dead",
+        "level_icon"
+      ]
+    },
+    {
+      "name"            : "bigExplosionTextureAtlas",
+      "filePath"        : "textures/big_explosion.png",
+      "subTextureWidth" : 32,
+      "subTextureHeight": 32,
+      "subTextures": [
+        "bigExplosion1",
+        "bigExplosion2",
+        "bigExplosion3",
+        "bigExplosion4",
+        "bigExplosion5",
+        "score_100",
+        "score_200",
+        "score_300",
+        "score_400",
+        "score_500",
+        "score_0"
+      ]
+    },
+    {
+      "name"            : "tanksTextureAtlas",
+      "filePath"        : "textures/tanks.png",
+      "subTextureWidth" : 16,
+      "subTextureHeight": 16,
+      "subTextures": [
+        "player_small_top1",
+        "player_small_top2",
+        "player_small_left1",
+        "player_small_left2",
+        "player_small_bottom1",
+        "player_small_bottom2",
+        "player_small_right1",
+        "player_small_right2",
+
+        "player_light_top1",
+        "player_light_top2",
+        "player_light_left1",
+        "player_light_left2",
+        "player_light_bottom1",
+        "player_light_bottom2",
+        "player_light_right1",
+        "player_light_right2",
+
+        "player_medium_top1",
+        "player_medium_top2",
+        "player_medium_left1",
+        "player_medium_left2",
+        "player_medium_bottom1",
+        "player_medium_bottom2",
+        "player_medium_right1",
+        "player_medium_right2",
+
+        "player_heavy_top1",
+        "player_heavy_top2",
+        "player_heavy_left1",
+        "player_heavy_left2",
+        "player_heavy_bottom1",
+        "player_heavy_bottom2",
+        "player_heavy_right1",
+        "player_heavy_right2",
+
+        "enemy_regular_white_top1",
+        "enemy_regular_white_top2",
+        "enemy_regular_white_left1",
+        "enemy_regular_white_left2",
+        "enemy_regular_white_bottom1",
+        "enemy_regular_white_bottom2",
+        "enemy_regular_white_right1",
+        "enemy_regular_white_right2",
+
+        "enemy_regular_red_top1",
+        "enemy_regular_red_top2",
+        "enemy_regular_red_left1",
+        "enemy_regular_red_left2",
+        "enemy_regular_red_bottom1",
+        "enemy_regular_red_bottom2",
+        "enemy_regular_red_right1",
+        "enemy_regular_red_right2",
+
+        "enemy_highspeed_white_top1",
+        "enemy_highspeed_white_top2",
+        "enemy_highspeed_white_left1",
+        "enemy_highspeed_white_left2",
+        "enemy_highspeed_white_bottom1",
+        "enemy_highspeed_white_bottom2",
+        "enemy_highspeed_white_right1",
+        "enemy_highspeed_white_right2",
+
+        "enemy_highspeed_red_top1",
+        "enemy_highspeed_red_top2",
+        "enemy_highspeed_red_left1",
+        "enemy_highspeed_red_left2",
+        "enemy_highspeed_red_bottom1",
+        "enemy_highspeed_red_bottom2",
+        "enemy_highspeed_red_right1",
+        "enemy_highspeed_red_right2",
+
+        "enemy_rapidfire_white_top1",
+        "enemy_rapidfire_white_top2",
+        "enemy_rapidfire_white_left1",
+        "enemy_rapidfire_white_left2",
+        "enemy_rapidfire_white_bottom1",
+        "enemy_rapidfire_white_bottom2",
+        "enemy_rapidfire_white_right1",
+        "enemy_rapidfire_white_right2",
+
+        "enemy_rapidfire_red_top1",
+        "enemy_rapidfire_red_top2",
+        "enemy_rapidfire_red_left1",
+        "enemy_rapidfire_red_left2",
+        "enemy_rapidfire_red_bottom1",
+        "enemy_rapidfire_red_bottom2",
+        "enemy_rapidfire_red_right1",
+        "enemy_rapidfire_red_right2",
+
+        "enemy_armored_white_top1",
+        "enemy_armored_white_top2",
+        "enemy_armored_white_left1",
+        "enemy_armored_white_left2",
+        "enemy_armored_white_bottom1",
+        "enemy_armored_white_bottom2",
+        "enemy_armored_white_right1",
+        "enemy_armored_white_right2",
+
+        "enemy_armored_red_top1",
+        "enemy_armored_red_top2",
+        "enemy_armored_red_left1",
+        "enemy_armored_red_left2",
+        "enemy_armored_red_bottom1",
+        "enemy_armored_red_bottom2",
+        "enemy_armored_red_right1",
+        "enemy_armored_red_right2",
+
+        "enemy_armored_yellow_top1",
+        "enemy_armored_yellow_top2",
+        "enemy_armored_yellow_left1",
+        "enemy_armored_yellow_left2",
+        "enemy_armored_yellow_bottom1",
+        "enemy_armored_yellow_bottom2",
+        "enemy_armored_yellow_right1",
+        "enemy_armored_yellow_right2",
+
+        "enemy_armored_green1_top1",
+        "enemy_armored_green1_top2",
+        "enemy_armored_green1_left1",
+        "enemy_armored_green1_left2",
+        "enemy_armored_green1_bottom1",
+        "enemy_armored_green1_bottom2",
+        "enemy_armored_green1_right1",
+        "enemy_armored_green1_right2",
+
+        "enemy_armored_green2_top1",
+        "enemy_armored_green2_top2",
+        "enemy_armored_green2_left1",
+        "enemy_armored_green2_left2",
+        "enemy_armored_green2_bottom1",
+        "enemy_armored_green2_bottom2",
+        "enemy_armored_green2_right1",
+        "enemy_armored_green2_right2"
+      ]
+    },
+    {
+      "name"             : "icon",
+      "filePath"         : "textures/game_icon.png",
+      "subTextureWidth"  : 256,
+      "subTextureHeight" : 256,
+      "subTextures" : [
+        "icon"
+      ]
+    },
+    {
+      "name"             : "pixel_font",
+      "filePath"         : "textures/pixel_font.png",
+      "subTextureWidth"  : 8,
+      "subTextureHeight" : 8,
+      "subTextures" : [
+        "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
+        "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
+        "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".", ",", ";",
+        ":", "@", "#", "'", "!", "\"","/", "?", "{", "}", "%", "&", "*",
+        "(", ")", "$"
+      ]
+    }
+  ],
+
+	"sprites" : [
+    {
+      "name"     : "brickWall_All",
+      "texture"  : "mapTextureAtlas_8x8",
+      "shader"   : "spriteShader",
+      "reserved" : ""
+    },
+    {
+      "name"     : "brickWall_TopLeft",
+      "texture"  : "mapTextureAtlas_8x8",
+      "shader"   : "spriteShader",
+      "reserved" : ""
+    },
+    {
+      "name"     : "brickWall_TopRight",
+      "texture"  : "mapTextureAtlas_8x8",
+      "shader"   : "spriteShader",
+      "reserved" : ""
+    },
+    {
+      "name"     : "brickWall_Top",
+      "texture"  : "mapTextureAtlas_8x8",
+      "shader"   : "spriteShader",
+      "reserved" : ""
+    },
+    {
+      "name"     : "brickWall_BottomLeft",
+      "texture"  : "mapTextureAtlas_8x8",
+      "shader"   : "spriteShader",
+      "reserved" : ""
+    },
+    {
+      "name"     : "brickWall_Left",
+      "texture"  : "mapTextureAtlas_8x8",
+      "shader"   : "spriteShader",
+      "reserved" : ""
+    },        
+    {
+      "name"     : "brickWall_TopRight_BottomLeft",
+      "texture"  : "mapTextureAtlas_8x8",
+      "shader"   : "spriteShader",
+      "reserved" : ""
+    },
+    {
+      "name"     : "brickWall_Top_BottomLeft",
+      "texture"  : "mapTextureAtlas_8x8",
+      "shader"   : "spriteShader",
+      "reserved" : ""
+    },
+    {
+      "name"     : "brickWall_BottomRight",
+      "texture"  : "mapTextureAtlas_8x8",
+      "shader"   : "spriteShader",
+      "reserved" : ""
+    },
+    {
+      "name"     : "brickWall_TopLeft_BottomRight",
+      "texture"  : "mapTextureAtlas_8x8",
+      "shader"   : "spriteShader",
+      "reserved" : ""
+    },
+    {
+      "name"     : "brickWall_Right",
+      "texture"  : "mapTextureAtlas_8x8",
+      "shader"   : "spriteShader",
+      "reserved" : ""
+    },
+    {
+      "name"     : "brickWall_Top_BottomRight",
+      "texture"  : "mapTextureAtlas_8x8",
+      "shader"   : "spriteShader",
+      "reserved" : ""
+    },        
+    {
+      "name"     : "brickWall_Bottom",
+      "texture"  : "mapTextureAtlas_8x8",
+      "shader"   : "spriteShader",
+      "reserved" : ""
+    },
+    {
+      "name"     : "brickWall_TopLeft_Bottom",
+      "texture"  : "mapTextureAtlas_8x8",
+      "shader"   : "spriteShader",
+      "reserved" : ""
+    },
+    {
+      "name"     : "brickWall_TopRight_Bottom",
+      "texture"  : "mapTextureAtlas_8x8",
+      "shader"   : "spriteShader",
+      "reserved" : ""
+    },
+    {
+      "name"     : "empty",
+      "texture"  : "mapTextureAtlas_8x8",
+      "shader"   : "empty",
+      "reserved" : ""
+    },
+    {
+      "name"     : "water",
+      "texture"  : "mapTextureAtlas_8x8",
+      "shader"   : "spriteShader",
+      "reserved" : "",
+      "tiles" : [
+        {
+          "subTexture" : "water1",
+          "duration"   : 30
+        },
+        {
+          "subTexture" : "water2",
+          "duration"   : 30
+        },
+        {
+          "subTexture" : "water3",
+          "duration"   : 30
+        }
+      ]
+    },        
+    {
+      "name"     : "concreteWall",
+      "texture"  : "mapTextureAtlas_8x8",
+      "shader"   : "spriteShader",
+      "reserved" : ""
+    },
+    {
+      "name"     : "trees",
+      "texture"  : "mapTextureAtlas_8x8",
+      "shader"   : "spriteShader",
+      "reserved" : ""
+    },
+    {
+      "name"     : "player_tank_icon",
+      "texture"  : "mapTextureAtlas_8x8",
+      "shader"   : "spriteShader",
+      "reserved" : ""
+    },
+    {
+      "name"     : "enemy_tank_icon",
+      "texture"  : "mapTextureAtlas_8x8",
+      "shader"   : "spriteShader",
+      "reserved" : ""
+    },
+    {
+      "name"     : "ice",
+      "texture"  : "mapTextureAtlas_8x8",
+      "shader"   : "spriteShader",
+      "reserved" : ""
+    },
+    {
+      "name"     : "border",
+      "texture"  : "mapTextureAtlas_8x8",
+      "shader"   : "spriteShader",
+      "reserved" : ""
+    },
+    {
+      "name"     : "bullet_top",
+      "texture"  : "mapTextureAtlas_8x8",
+      "shader"   : "spriteShader",
+      "reserved" : ""
+    },
+    {
+      "name"     : "bullet_bottom",
+      "texture"  : "mapTextureAtlas_8x8",
+      "shader"   : "spriteShader",
+      "reserved" : ""
+    },
+    {
+      "name"     : "bullet_left",
+      "texture"  : "mapTextureAtlas_8x8",
+      "shader"   : "spriteShader",
+      "reserved" : ""
+    },
+    {
+      "name"     : "bullet_right",
+      "texture"  : "mapTextureAtlas_8x8",
+      "shader"   : "spriteShader",
+      "reserved" : ""
+    },
+    {
+      "name"     : "black_fill",
+      "texture"  : "mapTextureAtlas_8x8",
+      "shader"   : "default",
+      "reserved" : ""
+    },
+    {
+      "name"     : "eagle",
+      "texture"  : "mapTextureAtlas_16x16",
+      "shader"   : "spriteShader",
+      "reserved" : "",
+      "tiles": [
+        {
+          "subTexture" : "eagle",
+          "duration"   : 0
+        },
+        {
+          "subTexture" : "eagle_dead",
+          "duration"   : 0
+        }
+      ]
+    },
+    {
+      "name"     : "level_icon",
+      "texture"  : "mapTextureAtlas_16x16",
+      "shader"   : "spriteShader",
+      "reserved" : ""
+    },
+    {
+			"name"     : "respawn",
+			"texture"  : "mapTextureAtlas_16x16",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "respawn1",
+          "duration"   : 4
+        },
+        {
+          "subTexture" : "respawn2",
+          "duration"   : 4
+        },
+        {
+          "subTexture" : "respawn3",
+          "duration"   : 4
+        },
+        {
+          "subTexture" : "respawn4",
+          "duration"   : 4
+        },
+        {
+          "subTexture" : "respawn3",
+          "duration"   : 4
+        },
+        {
+          "subTexture" : "respawn2",
+          "duration"   : 4
+        }
+    ]
+		},
+    {
+			"name"     : "shield",
+			"texture"  : "mapTextureAtlas_16x16",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "shield1",
+          "duration"   : 4
+        },
+        {
+          "subTexture" : "shield2",
+          "duration"   : 4
+        }
+      ]
+		},
+    {
+			"name"     : "explosion",
+			"texture"  : "mapTextureAtlas_16x16",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "explosion1",
+          "duration"   : 3
+        },
+        {
+          "subTexture" : "explosion2",
+          "duration"   : 3
+        },
+        {
+          "subTexture" : "explosion3",
+          "duration"   : 3
+        }
+      ]
+		},
+		{
+			"name"     : "bigExplosion",
+			"texture"  : "bigExplosionTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "bigExplosion1",
+          "duration"   : 6
+        },
+        {
+          "subTexture" : "bigExplosion2",
+          "duration"   : 6
+        },
+        {
+          "subTexture" : "bigExplosion3",
+          "duration"   : 6
+        },
+        {
+          "subTexture" : "bigExplosion4",
+          "duration"   : 6
+        },
+        {
+          "subTexture" : "bigExplosion5",
+          "duration"   : 6
+        },
+        {
+          "subTexture" : "bigExplosion3",
+          "duration"   : 6
+        }
+      ]
+		},		
+		{
+			"name"     : "score_0",
+			"texture"  : "bigExplosionTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "score_0",
+          "duration"   : 0
+        }
+      ]
+		},		
+		{
+			"name"     : "score_100",
+			"texture"  : "bigExplosionTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "score_100",
+          "duration"   : 16
+        }
+      ]
+		},		
+		{
+			"name"     : "score_200",
+			"texture"  : "bigExplosionTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "score_200",
+          "duration"   : 16
+        }
+      ]
+		},		
+		{
+			"name"     : "score_300",
+			"texture"  : "bigExplosionTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "score_300",
+          "duration"   : 16
+        }
+      ]
+		},		
+		{
+			"name"     : "score_400",
+			"texture"  : "bigExplosionTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "score_400",
+          "duration"   : 16
+        }
+      ]
+		},		
+		{
+			"name"     : "score_500",
+			"texture"  : "bigExplosionTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "score_500",
+          "duration"   : 16
+        }
+      ]
+		},		
+    {
+      "name"     : "bonus_0",
+      "texture"  : "mapTextureAtlas_16x16",
+      "shader"   : "spriteShader",
+      "reserved" : "",
+      "tiles" : [
+        {
+          "subTexture" : "bonus_helmet",
+          "duration"   : 8
+        }
+      ]
+    },
+    {
+      "name"     : "bonus_1",
+      "texture"  : "mapTextureAtlas_16x16",
+      "shader"   : "spriteShader",
+      "reserved" : "",
+      "tiles" : [
+        {
+          "subTexture" : "bonus_clock",
+          "duration"   : 8
+        }
+      ]
+    },
+    {
+      "name"     : "bonus_2",
+      "texture"  : "mapTextureAtlas_16x16",
+      "shader"   : "spriteShader",
+      "reserved" : "",
+      "tiles" : [
+        {
+          "subTexture" : "bonus_star",
+          "duration"   : 8
+        }
+      ]
+    },
+    {
+      "name"     : "bonus_3",
+      "texture"  : "mapTextureAtlas_16x16",
+      "shader"   : "spriteShader",
+      "reserved" : "",
+      "tiles" : [
+        {
+          "subTexture" : "bonus_grenade",
+          "duration"   : 8
+        }
+      ]
+    },
+    {
+      "name"     : "bonus_4",
+      "texture"  : "mapTextureAtlas_16x16",
+      "shader"   : "spriteShader",
+      "reserved" : "",
+      "tiles" : [
+        {
+          "subTexture" : "bonus_shovel",
+          "duration"   : 8
+        }
+      ]
+    },
+    {
+      "name"     : "bonus_5",
+      "texture"  : "mapTextureAtlas_16x16",
+      "shader"   : "spriteShader",
+      "reserved" : "",
+      "tiles" : [
+        {
+          "subTexture" : "bonus_tank",
+          "duration"   : 8
+        }
+      ]
+    },
+    {
+			"name"     : "player_00",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "player_small_top1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "player_small_top2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "player_01",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "player_small_bottom1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "player_small_bottom2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "player_02",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "player_small_left1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "player_small_left2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "player_03",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "player_small_right1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "player_small_right2",
+          "duration"   :  8
+        }
+      ]
+		},		
+		{
+			"name"     : "player_10",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "player_light_top1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "player_light_top2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "player_11",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "player_light_bottom1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "player_light_bottom2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "player_12",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "player_light_left1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "player_light_left2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "player_13",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "player_light_right1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "player_light_right2",
+          "duration"   :  8
+        }
+      ]
+		},		
+		{
+			"name"     : "player_20",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "player_medium_top1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "player_medium_top2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "player_21",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "player_medium_bottom1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "player_medium_bottom2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "player_22",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "player_medium_left1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "player_medium_left2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "player_23",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "player_medium_right1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "player_medium_right2",
+          "duration"   :  8
+        }
+      ]
+		},		
+		{
+			"name"     : "player_30",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "player_heavy_top1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "player_heavy_top2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "player_31",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "player_heavy_bottom1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "player_heavy_bottom2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "player_32",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "player_heavy_left1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "player_heavy_left2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "player_33",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "player_heavy_right1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "player_heavy_right2",
+          "duration"   :  8
+        }
+      ]
+		},		
+    {
+			"name"     : "enemy_000",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_regular_white_top1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_regular_white_top2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_010",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_regular_white_bottom1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_regular_white_bottom2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_020",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_regular_white_left1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_regular_white_left2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_030",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_regular_white_right1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_regular_white_right2",
+          "duration"   :  8
+        }
+      ]
+		},		
+		{
+			"name"     : "enemy_100",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_highspeed_white_top1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_highspeed_white_top2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_110",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_highspeed_white_bottom1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_highspeed_white_bottom2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_120",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_highspeed_white_left1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_highspeed_white_left2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_130",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_highspeed_white_right1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_highspeed_white_right2",
+          "duration"   :  8
+        }
+      ]
+		},		
+		{
+			"name"     : "enemy_200",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_rapidfire_white_top1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_rapidfire_white_top2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_210",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_rapidfire_white_bottom1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_rapidfire_white_bottom2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_220",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_rapidfire_white_left1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_rapidfire_white_left2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_230",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_rapidfire_white_right1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_rapidfire_white_right2",
+          "duration"   :  8
+        }
+      ]
+		},		
+		{
+			"name"     : "enemy_300",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_armored_white_top1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_armored_white_top2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_310",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_armored_white_bottom1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_armored_white_bottom2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_320",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_armored_white_left1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_armored_white_left2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_330",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_armored_white_right1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_armored_white_right2",
+          "duration"   :  8
+        }
+      ]
+		},		
+		{
+			"name"     : "enemy_301",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_armored_yellow_top1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_armored_yellow_top2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_311",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_armored_yellow_bottom1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_armored_yellow_bottom2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_321",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_armored_yellow_left1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_armored_yellow_left2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_331",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_armored_yellow_right1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_armored_yellow_right2",
+          "duration"   :  8
+        }
+      ]
+		},		
+		{
+			"name"     : "enemy_302",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_armored_green1_top1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_armored_green1_top2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_312",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_armored_green1_bottom1",
+          "duration"   :  8
+        },
+        {
+          "subTexture": "enemy_armored_green1_bottom2",
+          "duration": 8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_322",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_armored_green1_left1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_armored_green1_left2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_332",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_armored_green1_right1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_armored_green1_right2",
+          "duration"   :  8
+        }
+      ]
+		},		
+		{
+			"name"     : "enemy_303",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_armored_green2_top1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_armored_green2_top2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_313",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_armored_green2_bottom1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_armored_green2_bottom2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_323",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_armored_green2_left1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_armored_green2_left2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_333",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_armored_green2_right1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_armored_green2_right2",
+          "duration"   :  8
+        }
+      ]
+		},		
+		{
+			"name"     : "enemy_000_bonus",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_regular_red_top1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_regular_red_top2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_010_bonus",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_regular_red_bottom1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_regular_red_bottom2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_020_bonus",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_regular_red_left1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_regular_red_left2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_030_bonus",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_regular_red_right1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_regular_red_right2",
+          "duration"   :  8
+        }
+      ]
+		},		
+		{
+			"name"     : "enemy_100_bonus",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_highspeed_red_top1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_highspeed_red_top2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_110_bonus",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_highspeed_red_bottom1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_highspeed_red_bottom2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_120_bonus",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_highspeed_red_left1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_highspeed_red_left2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_130_bonus",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_highspeed_red_right1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_highspeed_red_right2",
+          "duration"   :  8
+        }
+      ]
+		},		
+		{
+			"name"     : "enemy_200_bonus",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_rapidfire_red_top1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_rapidfire_red_top2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_210_bonus",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_rapidfire_red_bottom1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_rapidfire_red_bottom2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_220_bonus",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_rapidfire_red_left1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_rapidfire_red_left2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_230_bonus",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_rapidfire_red_right1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_rapidfire_red_right2",
+          "duration"   :  8
+        }
+      ]
+		},		
+		{
+			"name"     : "enemy_300_bonus",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_armored_red_top1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_armored_red_top2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_310_bonus",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_armored_red_bottom1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_armored_red_bottom2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_320_bonus",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_armored_red_left1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_armored_red_left2",
+          "duration"   :  8
+        }
+      ]
+		},
+		{
+			"name"     : "enemy_330_bonus",
+			"texture"  : "tanksTextureAtlas",
+			"shader"   : "spriteShader",
+			"reserved" : "",
+			"tiles" : [
+        {
+          "subTexture" : "enemy_armored_red_right1",
+          "duration"   :  8
+        },
+        {
+          "subTexture" : "enemy_armored_red_right2",
+          "duration"   :  8
+        }
+      ]
+		}
+	],
+
+  "titles": [
+    {
+      "name"        : "start_screen",
+      "description" : [
+        "03B487D.2B712B71A5..A731",
+        "0CE10.A5.A5..A5.A5..ADC.",
+        "0.A503B5.A5..A5.A5..A5..",
+        "333.3.21.21..21.23312331",
+        "........................",
+        ".....E3D.303.303.0.0....",
+        "....A5....0...0..BC7....",
+        "....2D.C..0...0...0.....",
+        ".....231.333..3...3....."
+      ]
+    },
+    {
+      "name"        : "pause",
+      "description" : [
+        "03B487D.0.A5E3D.033",
+        "0.A50.A50.A5BCC.0CC",
+        "033.03B50.A5C.A50..",
+        "3...3.21233.233.333"
+      ]
+    },
+    {
+      "name"        : "game_over",
+      "description" : [
+        "873187D.04E5A731",
+        "0.C40.A50005ADC.",
+        "B4A503B502A5A5..",
+        ".3313.213.212331",
+        "................",
+        "E3B40.A5A73103B4",
+        "0.A50.A5ADC.0.E5",
+        "0.A52D7.A5..0BD.",
+        "233..2..23313.21"
+       ]
+    }
+  ],
+
+  "levels": [
+    {
+      "level"       : 1,
+      "enemy_tanks" : [ 18, 2, 0, 0 ],
+      "description" : [
+        "..........................",
+        "..........................",
+        "..BB..BB..BB..BB..BB..BB..",
+        "..BB..BB..BB..BB..BB..BB..",
+        "..BB..BB..BB..BB..BB..BB..",
+        "..BB..BB..BB..BB..BB..BB..",
+        "..BB..BB..BBCCBB..BB..BB..",
+        "..BB..BB..BBCCBB..BB..BB..",
+        "..BB..BB..BB..BB..BB..BB..",
+        "..BB..BB..........BB..BB..",
+        "..BB..BB..........BB..BB..",
+        "..........BB..BB..........",
+        "..........BB..BB..........",
+        "BB..BBBB..........BBBB..BB",
+        "CC..BBBB..........BBBB..CC",
+        "..........BB..BB..........",
+        "..........BBBBBB..........",
+        "..BB..BB..BBBBBB..BB..BB..",
+        "..BB..BB..BB..BB..BB..BB..",
+        "..BB..BB..BB..BB..BB..BB..",
+        "..BB..BB..BB..BB..BB..BB..",
+        "..BB..BB..........BB..BB..",
+        "..BB..BB..........BB..BB..",
+        "..BB..BB...BBBB...BB..BB..",
+        "...........B..B...........",
+        "...........B..B..........."
+      ]
+    },
+    {
+      "level"       : 2,
+      "enemy_tanks" : [ 14, 4, 0, 2 ],
+      "description" : [
+        "......CC......CC..........",
+        "......CC......CC..........",
+        "..BB..CC......BB..BB..BB..",
+        "..BB..CC......BB..BB..BB..",
+        "..BB........BBBB..BBCCBB..",
+        "..BB........BBBB..BBCCBB..",
+        "......BB..........CC......",
+        "......BB..........CC......",
+        "TT....BB....CC....BBTTBBCC",
+        "TT....BB....CC....BBTTBBCC",
+        "TTTT......BB....CC..TT....",
+        "TTTT......BB....CC..TT....",
+        "..BBBBBBTTTTTTCC....TTBB..",
+        "..BBBBBBTTTTTTCC....TTBB..",
+        "......CCTTBB..BB..BB..BB..",
+        "......CCTTBB..BB..BB..BB..",
+        "CCBB..CC..BB..BB......BB..",
+        "CCBB..CC..BB..BB......BB..",
+        "..BB..BB..BBBBBB..BBCCBB..",
+        "..BB..BB..BBBBBB..BBCCBB..",
+        "..BB..BB..BBBBBB..........",
+        "..BB..BB..BBBBBB..........",
+        "..BB..............BB..BB..",
+        "..BB.......BBBB...BB..BB..",
+        "..BB..BB...B..B...BBBBBB..",
+        "..BB..BB...B..B...BBBBBB.."
+      ]
+    },
+    {
+      "level"       : 3,
+      "enemy_tanks" : [ 14, 4, 0, 2 ],
+      "description" : [
+        "........BB......BB........",
+        "........BB......BB........",
+        "..TTTTTTBB................",
+        "..TTTTTTBB..........CCCCCC",
+        "BBTTTTTT..................",
+        "BBTTTTTT..................",
+        "TTTTTTTT......BB..BBBBBBB.",
+        "TTTTTTTT......BB..BBBBBBB.",
+        "TTTTTTTTBBBBBBBB..BB...B..",
+        "TTTTTTTTBBBBBB....BB...B..",
+        "TTTTTTTT....BB.........B..",
+        "TTTTTTTT....BB.........B..",
+        "..TT........CCCCCC....TT..",
+        "..TT........CCCCCC....TT..",
+        "..................TTTTTTTT",
+        "..BB..BB..........TTTTTTTT",
+        "BBB..BBBB..BBBBBBBTTTTTTTT",
+        "BBB..BBBB..B......TTTTTTTT",
+        "..........BB......TTTTTTTT",
+        "..........BB..BBBBTTTTTTTT",
+        "BB....C.......BBBBTTTTTT..",
+        "BB....C...........TTTTTT..",
+        "BBBB..C...........TTTTTT..",
+        "BBBB..C....BBBB...TTTTTT..",
+        "BBBBBB.....B..B...BB......",
+        "BBBBBB.....B..B...BB......"
+      ]
+    },
+    {
+      "level"       : 4,
+      "enemy_tanks" : [ 2, 5, 10, 3 ],
+      "description" : [
+        "..TTTT................TT..",
+        "..TTTT................TT..",
+        "TTTT......BBBB..........TT",
+        "TTTT....BBBBBBBBBB......TT",
+        "TT.....BBBBBBBBBBBBB....CC",
+        "TT.....BBBBBBBBBBBBBBB....",
+        "CC....BBBBBBBBBBBBBBBBB...",
+        "......BBBBBBBBBBBBBBBBB...",
+        ".....BBB......BBBBBB..B...",
+        ".....B..........BBBB..B...",
+        "WW...B..C...C...BBB.......",
+        "WW...B..C...C...BBB.......",
+        "....BB..........BBB...WWWW",
+        "....BB..BBBB....BBB...WWWW",
+        "....BBBBBBBBBBBBBBBB......",
+        "....BBBBBBBBBBBBBBBB......",
+        "...BBBBBBBBBBBBBBBBBB.....",
+        "...BBBBBBBBBBBBBBBBBB.....",
+        "..BBBBBBBBBBBBBBBBBBBB....",
+        "......BBBBBBBBBBBB........",
+        "..BBBB..BBBBBBBB..BBBB..TT",
+        "..BBBBBB..BBBB..BBBBBB..TT",
+        "TT..BBBB........BBBB..TTTT",
+        "TT.........BBBB.......TTTT",
+        "CCTT.......B..B.....TTTTCC",
+        "CCTT.......B..B.....TTTTCC"
+      ]
+    },
+    {
+      "level"       : 5,
+      "enemy_tanks" : [ 8, 5, 5, 2 ],
+      "description" : [
+        "........BBBB..............",
+        "........BBBB..............",
+        "........BB......CCCCCC....",
+        "CC..BB..BB..........CC....",
+        "CC..BB......BB............",
+        "CC..BB......BB............",
+        "BB..BBBBBB..BBBB..WWWW..WW",
+        "BB..BBBBBB..BBBB..WWWW..WW",
+        "BB......BB........WW......",
+        "..................WW......",
+        "........WWWW..WWWWWW..BBBB",
+        "....BB..WWWW..WWWWWW..BBBB",
+        "BBBB....WWBB..BBB.........",
+        "BBBB....WWBB..BBB....CC...",
+        "........WW...........CC...",
+        "........WW...........C....",
+        "WWWWWW..WW..CC..BB...C....",
+        "WWWWWW..WW..CC..BB...C....",
+        ".....................CBBBB",
+        "......BBBB...........CBBBB",
+        "........BBBBBBBBBB........",
+        "........BB......BBBB......",
+        "BBBBBB............BBBB....",
+        "BBBB.......BBBB.....BB....",
+        "BB.........B..B...........",
+        "...........B..B..........."
+      ]
+    },
+    {
+      "level"       : 6,
+      "enemy_tanks" : [ 9, 2, 7, 2 ],
+      "description" : [
+        "...........B..B.TTTT......",
+        "...........B..B.TTTT......",
+        "..B..C..B........BTTB..BTT",
+        "..B..C..B........BTTB..BTT",
+        "..B..C..B...BB...BTTB..BTT",
+        "..B..C..B...BB...BTTB..BTT",
+        "..BB....BB..CC..BBTT..BBTT",
+        "..BB....BB..CC..BBTT..BBTT",
+        ".......BCC..BB..BBC...TTTT",
+        ".......B....BB....C...TTTT",
+        "BBBBB.....TTBBTT.....BBBBB",
+        "BBBBB.....TTBBTT.....BBBBB",
+        ".........BTTTTTTB.........",
+        ".........BTTTTTTB.........",
+        "CCBBBB..BBTTTTTTBB.BBBBBCC",
+        "CCBBBB....TTTTTT...BBBBBCC",
+        "CCCCCC......TT......CCCCCC",
+        "........BB..TT..BB........",
+        "..BB....BB......BB........",
+        "..BB....BB......BB........",
+        "..BBB.....BB..BB.....BBBTT",
+        "..BBB................BBBTT",
+        "....BB..............TTTTTT",
+        "...........BBBB.....TTTTTT",
+        "...........B..B.......TTTT",
+        "....BB.....B..B.....BBTTTT"
+      ]
+    },
+    {
+      "level"       : 7,
+      "enemy_tanks" : [ 10, 4, 6, 0 ],
+      "description" : [
+        "..............CCCC........",
+        "..........................",
+        "....CCCCCCCC........CC....",
+        "....CC..............CC....",
+        "....CC......TT..CCCCCC....",
+        "....CC......TT....CCCC....",
+        "..CC......TTCC......CC....",
+        "..CC......TTCC......CC....",
+        "........TTCCCC......CCCC..",
+        "........TTCCCC........CC..",
+        "..CC..TTCCCCCC..CC........",
+        "..CC..TTCCCCCC..CC........",
+        "...C..CCCC......CCCC......",
+        "...C..CCCC......CCCC......",
+        "C.......CC..CCCCCC........",
+        "C.......CC..CCCCCC.....C..",
+        "...CCC......CCCCTT....CC..",
+        "...CCC......CCCCTT....CC..",
+        "..CC........CCTT....CCCC..",
+        "..CC........CCTT....CCCC..",
+        "..CCCCCC....TT....CC......",
+        "......CC....TT....CC......",
+        "..................CC....CC",
+        "...........BBBB.......CCCC",
+        "...........B..B...........",
+        "CCCC.......B..B..........."
+      ]
+    },
+    {
+      "level"       : 8,
+      "enemy_tanks" : [ 7, 4, 7, 2 ],
+      "description" : [
+        "....BB....BB......BB......",
+        "....BB....BB..BB..BB......",
+        "TTBBBBBB..BB......BBB.....",
+        "TTBBBBBB..BB..CC..BBB.....",
+        "TTTTTT....BB..BB..BB...BB.",
+        "TTTTTT........BB.......BB.",
+        "TTWWWWWWWWWWWWWWWWWWWW..WW",
+        "TTWWWWWWWWWWWWWWWWWWWW..WW",
+        "..BB......................",
+        "..BB........BBBB..........",
+        "....BB.....BBBBBBBBBBBCCCC",
+        "....BB.....BBBBB..BB......",
+        "BBBB..BB...BBBBBTTBB....BB",
+        "BBBB..BB...BBBBBTTBBCCCCBB",
+        "......CC......TTTTTTTT....",
+        "......CC..CC..TTTTTTTT....",
+        "WWWW..WWWWWWWWWW..WWWWWWWW",
+        "WWWW..WWWWWWWWWW..WWWWWWWW",
+        "TTTT...B..................",
+        "TTTT...B....BBBB..........",
+        "TTTTBB..B......B......BB..",
+        "TTTTBB..B......B..CCBBBB..",
+        "TT..BB..B.........BB..BB..",
+        "TTCCBB..B..BBBB.......BB..",
+        "...........B..B.......BB..",
+        "...........B..B...BB......"
+      ]
+    },
+    {
+      "level"       : 9,
+      "enemy_tanks" : [ 6, 4, 7, 3 ],
+      "description" : [
+        "......BB............TT....",
+        "......BB..........CCTT....",
+        "BB............TT.CCCC...BB",
+        "BB..........CCTT.CCCC...BB",
+        "........TT.CCCC...CCTT....",
+        "......CCTT.CCCC.....TT....",
+        ".....CCCC...CCTT..........",
+        ".....CCCC.....TT..........",
+        "......CCTT................",
+        "........TT................",
+        "......TT..TT..TT..TT......",
+        "......TTCCTT..TTCCTT......",
+        "CCBB...CCCC....CCCC...BBCC",
+        "CCBB...CCCC....CCCC...BBCC",
+        "......TTCCTT..TTCCTT......",
+        "......TT..TT..TT..TT......",
+        "..........................",
+        "........CC......CC........",
+        "BB.....CCCC....CCCC.....BB",
+        "BB.....CCCC....CCCC.....BB",
+        "BB....TTCCTT..TTCCTT....BB",
+        "BB....TT..TT..TT..TT....BB",
+        "..........................",
+        "....BB.....BBBB.....BB....",
+        "....BBBB...B..B...BBBB....",
+        "....BBBB...B..B...BBBB...."
+      ]
+    },
+    {
+      "level"       : 10,
+      "enemy_tanks" : [ 12, 2, 4, 2 ],
+      "description" : [
+        "..........................",
+        "..........................",
+        "...BBBBB............BBBBB.",
+        "...B..BB............BB..B.",
+        ".BBB....BB..TTTT..BB.....B",
+        ".B......BB..TTTT..BB.....B",
+        "BB......BBTTTTTTTTBB.....B",
+        "BB......BBTTTTTTTTBB.....B",
+        "BB.....BBBTTCCCCTTBBB...BB",
+        "BB.....BBBTTCCCCTTBBB...BB",
+        ".B....BBWWWWWWWWWWWWBBBBBB",
+        ".BBBBBBBWWWWWWWWWWWWBBBBBB",
+        "..BBBBBBCCCCBBCCCCBBBBBBB.",
+        "..BBBBBBCCCCBBCCCCBBBBBBB.",
+        "....BBBBCC..BB..CCBBBBB...",
+        "....BBBBCC..BB..CCBBBBB...",
+        "....BBBBBBBBBBBBBBBBBBB...",
+        "....BBBBBBBBBBBBBBBBBBB...",
+        "BBTTBBBBBBCCCCBBBBBBBBTTBB",
+        "BBTT......CCCC........TTBB",
+        "BBTTTTTTTTTTTTTTTTTTTTTTBB",
+        "BBTTTTTTTTTTTTTTTTTTTTTTBB",
+        "....TTTTTT......TTTTTTTT..",
+        "....TTTTTT.BBBB.TTTTTTTT..",
+        "......B....B..B.....B.....",
+        "......B....B..B.....B....."
+      ]
+    },
+    {
+      "level"       : 11,
+      "enemy_tanks" : [ 0, 10, 4, 6 ],
+      "description" : [
+        "..........CC..BB..BBBB....",
+        "..........CC..BB..BBBB....",
+        "...BBBBBBBBB..BB..........",
+        "...BBBBBBBBB..BB..........",
+        "......B...BB..BBBB..TTTTTT",
+        "......B...BB..BBBB..TTTTTT",
+        "...B..........CC..TTTTTTTT",
+        "...B..........CC..TTTTTTTT",
+        "...B..BBBBBBCCBBBBTTTTBBCC",
+        "...B..BBBBBBCCBBBBTTTT..CC",
+        "..BBBBBBCC....BB..TTTT...B",
+        "........CC....BB..TTTT...B",
+        ".BBBBBBB..CCTTTTTTTTTT....",
+        ".BBBBBBB..CCTTTTTTTTTT....",
+        "......CC....TTTTTTTTTTBB..",
+        "......CC....TTTTTTTTTTBB..",
+        "CCBB..TTTTTTTTCCTTTTTTBB..",
+        "CCBB..TTTTTTTTCCTTTTTTBB..",
+        ".BBBTTTTTTTTTT........BBB.",
+        ".BBBTTTTTTTTTT........BBB.",
+        "..BBTTTT........CCBBBBBB..",
+        "..BBTTTT..........BBBBBB..",
+        "....TTTT..........BB...B..",
+        "....TTTT...BBBB...BB...B..",
+        "....TTTT...B..B...........",
+        "..BBTTTT...B..B..........."
+      ]
+    },
+    {
+      "level"       : 12,
+      "enemy_tanks" : [ 0, 6, 8, 6 ],
+      "description" : [
+        "..............BBBBBB......",
+        "..............BBBBBB......",
+        "..BBBBBB..........BB......",
+        "..BBBBBBBB..BB....BB......",
+        "........BB..BB........BBBB",
+        "........BB............BBBB",
+        "..WWWWWWWWWW..BBB.....BBCC",
+        "..WWWWWWWWWW..BBB.....BB..",
+        "..........WW..BB..CCC.BB..",
+        "....CCCCCCWW..BB..CCC.BB..",
+        "BB..BBBBBBWWWWWW..WWBBBB..",
+        "BB..BBBBBBWWWWWW..WWBBBB..",
+        "........CCWW......WWCC....",
+        "........CCWW......WW......",
+        "WWWWWW..WWWWBBBB..WW......",
+        "WWWWWW..WWWWBBBB..WW......",
+        "..........BBCCCC..WWWWWW..",
+        "..........BB......WWWWWW..",
+        "BBBBBB....................",
+        "BBBBBB....................",
+        "....BB..CCCC......BBBB...B",
+        "....BB............BBBB...B",
+        "BB................BB....BB",
+        "BB.........BBBB...BB....BB",
+        "...........B..B...........",
+        "...........B..B..........."
+      ]
+    },
+    {
+      "level"       : 13,
+      "enemy_tanks" : [ 0, 8, 8, 4 ],
+      "description" : [
+        "..........................",
+        "........BB.......BB.......",
+        "..BBBBBBBB.......BBBBBBB..",
+        "..BBBBBBBB.......BBBBBBB..",
+        "..BB........BB........CC..",
+        "..BB........BB........CC..",
+        "..CC..BBBB......BBBB..BBBB",
+        "..CC..BB..........BB..BBBB",
+        "..BB..B.TT..CC..TT.B..CCBB",
+        "..BB..B.TTCCCCCCTT.B..CCBB",
+        "..BB....TTTTTTTTTT....CCBB",
+        "........TTTTTTTTTT......BB",
+        "BB......TTTTTTTTTT......BB",
+        "BBCC....TTTTTTTTTT....BBBB",
+        "BBCC..B.TTCCCCCCTT.B..BB..",
+        "BBCC..B.TT..CC..TT.B..BB..",
+        "BBBB..BB..........BB..CC..",
+        "BBBB..BBBB......BBBB..CC..",
+        "BBCC........BB........BB..",
+        "BBCC........BB........BB..",
+        "BBBBBBBBBB......BBBBBBCCCC",
+        "BBBBBBBBBB......BBBBBBCCCC",
+        "BBBB....BB......BB....BB..",
+        "BBBB.......BBBB.......BB..",
+        "BBBB.......B..B...........",
+        "BBBB.......B..B..........."
+      ]
+    },
+    {
+      "level"       : 14,
+      "enemy_tanks" : [ 0, 4, 10, 6 ],
+      "description" : [
+        "..........................",
+        "..........................",
+        "TTTT......BBBBBB......TTTT",
+        "TTTT....BBBBBBBBBB....TTTT",
+        "TT.....BBBBBBBBBBBB.....TT",
+        "TT.....BBBBBBBBBBBB.....TT",
+        "......BBBBTTBBTTBBBB....TT",
+        "......BBBBTTBBTTBBBB......",
+        "......BBTTTTBBTTTTBB......",
+        "......BBTTTTBBTTTTBB......",
+        "TT....BBBBBBBBBBBBBB....TT",
+        "TT....BBBBBBBBBBBBBB....TT",
+        "TTTT....BBTTBBTTBB....TTTT",
+        "TTTT....BBTTBBTTBB....TTTT",
+        "WWWWWW..BBBBBBBBBB..WWWWWW",
+        "WWWWWW..BBBBBBBBBB..WWWWWW",
+        ".........B.B.B.B.B........",
+        ".........B.B.B.B.B........",
+        "........B.B.B.B.B.........",
+        "........B.B.B.B.B.........",
+        ".C.C.C..............C.C.C.",
+        ".C.C.C..............C.C.C.",
+        "B.B.B................B.B.B",
+        "B.B.B......BBBB......B.B.B",
+        "C.C.C..C...B..B...C..C.C.C",
+        "C.C.C..C...B..B...C..C.C.C"
+      ]
+    },
+    {
+      "level"       : 15,
+      "enemy_tanks" : [ 2, 10, 0, 8 ],
+      "description" : [
+        "........BBBB....BB........",
+        "........BBBB....BB........",
+        "..TTTTBBBB......BB........",
+        "..TTTTBBBB......BB........",
+        "TTTTTTTTTTTTTTTTBBBB......",
+        "TTTTTTTTTTTTTTTTBBBB......",
+        "TTCCBBTTBBBBBBTTTTTTTTBBCC",
+        "TT..BBTTBBBBBBTTTTTTTTBBCC",
+        "TTTTBBTTTTTTCCTTTTBBC.BB..",
+        "TTTTBBTTTTTT..TTTTBBC.BB..",
+        "..TTTTBB..TTTTTTTTBB..BB..",
+        "..TTTTBBCCTTTTTTTTBB..BB..",
+        "..BBBBBBBBBBTTTTBBBBB.TTTT",
+        "..BBBBBBBBBBTTTTBBBBB.TTTT",
+        ".CCCBBBB......BBBB......TT",
+        ".C..BBBB......BB........TT",
+        "..BB..BB......BBTTTTBBB.TT",
+        "..BB..BB..CCBB..TTTTBBB.TT",
+        "..BB.....BBBBBTTTTBB....TT",
+        "..BB.....BBB..TTTTBB....TT",
+        "..BBBBB..BBBTTTT..TTBBTTTT",
+        "..BBBBB..B..TTTTBBTTBBTTTT",
+        "....BB..TT......BBTTBBTT..",
+        "....BB..TT.BBBB.BBTT..TT..",
+        "....BB.....B..B...TTTTTT..",
+        "...........B..B...TTTTTT.."
+      ]
+    },
+    {
+      "level"       : 16,
+      "enemy_tanks" : [ 16, 2, 0, 2 ],
+      "description" : [
+        "..........................",
+        "..........................",
+        "....CCTTCC................",
+        "....CCTTCC................",
+        "......TT..TT..............",
+        "......TT..TTCC............",
+        "..TT........TT............",
+        "..TT........TTBB..........",
+        "..TTTT....TT..TT..........",
+        "..TTTT....TT..TTCC........",
+        "..TT..TT..TT....TT........",
+        "..TT..TT..TT....TTBB......",
+        "..TT....TT......TTTT......",
+        "..TT....TT......TTTTCC....",
+        "....TT........TTTTTTTT....",
+        "....TT........TTTTTTTTBB..",
+        "......TT....TT..TTTTTTTT..",
+        "......TT....TT..TTTTTTTT..",
+        "BB..........TT....TTTTTTCC",
+        "BB..........TT....TTTTTTCC",
+        "BBBB..........TT..TTTTTTTT",
+        "BBBB..........TT..TTTTTTTT",
+        "CCBBBB..........TT..TTTTTT",
+        "CCBBBB.....BBBB.TT..TTTTTT",
+        "CCCCBBBB...B..B.TT....TTTT",
+        "CCCCBBBB...B..B.TT....TTTT"
+      ]
+    },
+    {
+      "level"       : 17,
+      "enemy_tanks" : [ 8, 2, 8, 2 ],
+      "description" : [
+        "..........................",
+        "........BB..........BB....",
+        "..BB..BBBB....IIIIIIBBBB..",
+        "..BB..BBBB....IIIIIIBBBB..",
+        "..BB....BB..CCIIIIIIIIII..",
+        "..BB....BB..CCIIIIIIIIII..",
+        "IIIIIIC.BB....BBIIIIIIII..",
+        "IIIIIIC.BB....BBIIIIIIII..",
+        "IIIIIIIIIIIIBBBB.BB.......",
+        "IIIIIIIIIIIIBBBB.BB.......",
+        ".....CIIIIIIIIBB.BB...CCCC",
+        ".....CIIIIIIIIBB.BB.......",
+        "BBBBBBBBIIIIIIIIIIIIIIBBBB",
+        "BBBBBBBBIIIIIIIIIIIIIIBBBB",
+        "......BBBBIIIIIIIIC.......",
+        "......BBBBIIIIIIIIC.......",
+        "..BBBBBB..IIIIIIBBBB..BB..",
+        "..BBBBBB..IIIIIIBBBB..BB..",
+        "IIIIIIBBII........BB..BB..",
+        "IIIIIIBBII........BB..BB..",
+        "IIIIIIIIIICC..CC......BB..",
+        "IIIIIIIIII..........BBBB..",
+        "BBIIIIIIII................",
+        "BBIIIIIIII.BBBB...BB......",
+        "BBBBC......B..B...BB..BB..",
+        "BBBBC......B..B...BB..BB.."
+      ]
+    },
+    {
+      "level"       : 18,
+      "enemy_tanks" : [ 2, 8, 6, 4 ],
+      "description" : [
+        "................CCCCCCTT..",
+        "................CCCCCCTT..",
+        "................CC....CC..",
+        "................CC....CC..",
+        "BBTTBB......BBBBBBBB..CC..",
+        "BBTTBB......BBBBBBBB..CC..",
+        "..BBTTBB....BB..TTBBCCCC..",
+        "..BBTTBB....BB..TTBBCCCC..",
+        "....BB..TTCCBBTT..BB......",
+        "....BB..TTCCBBTT..BB......",
+        "........CC..BBCCBBBB......",
+        "........CC..BBCCBBBB......",
+        "....BBBBCCBB..CC..........",
+        "....BBBBCCBB..CC..........",
+        "....BB..TTBBCCTT..........",
+        "....BB..TTBBCCTT..........",
+        "CCCCCCTT..BB....BBBB......",
+        "CCCCCCTT..BB....BBBB......",
+        "CC..BBBBBBBB....BBCCCC....",
+        "CC..BBBBBBBB....BBCCCC....",
+        "CC....CC..........CCBBBB..",
+        "CC....CC..........CCBBBB..",
+        "TTCCCCCC............BBCCCC",
+        "TTCCCCCC...BBBB.....BBCCCC",
+        "...........B..B.......CCCC",
+        "...........B..B.......CCCC"
+      ]
+    },
+    {
+      "level"       : 19,
+      "enemy_tanks" : [ 4, 4, 4, 8 ],
+      "description" : [
+        "..BB..BB..BB..BB..BB..BB..",
+        "..BB..BB..BB..BB..BB..BB..",
+        "..BB..BB..BB..BB..BB..BB..",
+        "..BB..BB..BB..BB..BB..BB..",
+        "..CC..CC..CC..CC..CC..CC..",
+        "..........................",
+        "........BB......BB........",
+        "BB..BB..BB......BB..BB..BB",
+        "BB..BBBBBB..BB..BBBBBB..BB",
+        "BB..BB..BB..BB..BB..BB..BB",
+        "CC..CC..CC..CC..CC..CC..CC",
+        "........CC..CC............",
+        "TTTT....BB..TT..BB....TTTT",
+        "TTTT....BB..TT..BB....TTTT",
+        "TTTTTTTTBBBBTTBBBBTTTTTTTT",
+        "TTTTTTTTBB..TTB..BTTTTTTTT",
+        "TTTTTTTTTTTTTTTTTTTTTTTTTT",
+        "TTTTTTTTTTTTTTTTTTTTTTTTTT",
+        "........BBTTTTTTBB........",
+        "BB..BB..BBTTTTTTBB..BB..BB",
+        "..BB..BB..........BB..BB..",
+        "..BB..BB..........BB..BB..",
+        "..BB..BB..........BB..BB..",
+        "..BB..BB...BBBB...BB..BB..",
+        "..BB..BB...B..B...BB..BB..",
+        "...........B..B..........."
+      ]
+    },
+    {
+      "level"       : 20,
+      "enemy_tanks" : [ 2, 8, 2, 8 ],
+      "description" : [
+        "......WW..BB....BB..BB....",
+        "......WW..BB....BB..BB....",
+        "................BB..CC....",
+        "................BB..CC....",
+        "......WW....CC..BB..BB....",
+        "......WW..BBCC..BB..BB....",
+        "CC..BBWW..CC....BB..BB....",
+        "....BBWW..CC..BB....BB....",
+        "....BBWW......BB..........",
+        "....BBWW......BB..........",
+        "BB..BBWWWW..WWWWWWWW....BB",
+        "BB..BBWWWW..WWWWWWWW....BB",
+        "..............TT..WW..CCCC",
+        "......BB......TT..WW......",
+        "BBBB.BBB..CCTTTTTTWW......",
+        "BBBB.BBB..CCTTTTTTWW..BBBB",
+        "BB...B....BBTTTTTTWW..BB..",
+        ".....B....BBTTTTTTWW..BB..",
+        "..........BB..TT..WW..TT..",
+        "..CC......BB..TT..WW..TT..",
+        "..BB......BBBBBB....TTTTTT",
+        "..BB..CC............TTTTTT",
+        "..BB..BB..........WWTTTTTT",
+        "..BB..BB...BBBB...WWTTTTTT",
+        "...........B..B...WW..TT..",
+        "...........B..B...WW..TT.."
+      ]
+    },
+    {
+      "level"       : 21,
+      "enemy_tanks" : [ 6, 2, 8, 4 ],
+      "description" : [
+        "..........................",
+        "......BBBBBB....BB........",
+        "....BBBBBBBBBBBBBBBB......",
+        "..BBBBBBBBBBBBBBBBBB......",
+        "..TTTTTTTTTTTTTTTTBBBB....",
+        "..TTTTTTTTTTTTTTTTBBBB....",
+        "TTTT............TTTTBBBB..",
+        "TTTT............TTTTBBBB..",
+        "TT..CC....CC......TTTTTT..",
+        "TT..CC....CC......TTTTTT..",
+        "TT..CC....CC......TTTTTT..",
+        "TT..CC....CC......TTTTTT..",
+        "TT....TT........TTTTBBBBB.",
+        "TT....TT........TTTTBBBBB.",
+        "TTTTTTTTTTTTTTTTTTBBBBBBB.",
+        "TTTTTTTTTTTTTTTTTTBBBBBBB.",
+        "BBTTTTBBBBTTTTTTBBBBBBBB..",
+        "BBTTTTBBBBTTTTTTBBBBBBBB..",
+        "..BBBBBBBBBBBBBBBBBBBB..CC",
+        "..BBBBBBBBBBBBBBBBBBBB..CC",
+        "CC..BBCCBBBBBBBBBBBBB...CC",
+        "CC..BBCCBBBBBBBBBBBBB...CC",
+        "..CCBBBBCC......BBBBCCCCCC",
+        "..CCBB..CC.BBBB.BBBBCCCCCC",
+        "...........B..B...........",
+        "...........B..B..........."
+      ]
+    },
+    {
+      "level"       : 22,
+      "enemy_tanks" : [ 6, 8, 2, 4 ],
+      "description" : [
+        "..........TT..............",
+        "..........TT..............",
+        "........TTCCTT............",
+        "........TTCCTT............",
+        "....TT....TT....TTTT......",
+        "....TT....TT....TTTT......",
+        "..TTBBTT......TTBBBBTT....",
+        "..TTBBTT......TTBBBBTT....",
+        "....TTBBTT......TTTT....TT",
+        "....TTBBTT......TTTT....TT",
+        "TT....TT....TT........TTCC",
+        "TT....TT....TT........TTCC",
+        "BBTT......TTCCTT....TT..TT",
+        "BBTT......TTCCTT....TT..TT",
+        "CCBBTT......TT....TTCCTT..",
+        "CCBBTT......TT....TTCCTT..",
+        "BBTT....TT......TT..TT....",
+        "BBTT....TT......TT..TT....",
+        "TT....TTBBTT..TTBBTT......",
+        "TT....TTBBTT..TTBBTT......",
+        "......TTBBTT....TT....TT..",
+        "......TTBBTT....TT....TT..",
+        "..TT....TT..........TTCCTT",
+        "..TT....TT.BBBB.....TTCCTT",
+        "TTCCTT.....B..B...TTBBTT..",
+        "TTCCTT.....B..B...TTBBTT.."
+      ]
+    },
+    {
+      "level"       : 23,
+      "enemy_tanks" : [ 0, 10, 4, 6 ],
+      "description" : [
+        "..........................",
+        "..........................",
+        "..........CCCC............",
+        "..........CCCC............",
+        "............CC............",
+        "............CC............",
+        "..CCCCTTTTBBCCBBTTTTCCCC..",
+        "..CCCCTTTTBBCCBBTTTTCCCC..",
+        "......CCTTTTCCTTTTCC......",
+        "......CCTTTTCCTTTTCC......",
+        "TT......CCTTTTTTCC......TT",
+        "TT......CCTTTTTTCC......TT",
+        "CCTT......TTTTTT......TTCC",
+        "CCTT......TTTTTT......TTCC",
+        "TT........CCTTCC........TT",
+        "TT......CC..TT..CC......TT",
+        "........CC......CC........",
+        "........CC..CC..CC........",
+        "......CC....CC....CC......",
+        "......CC....CC....CC......",
+        "..........................",
+        "..........................",
+        "..........................",
+        "...........BBBB...........",
+        "....CC.....B..B.....CC....",
+        "....CC.....B..B.....CC...."
+      ]
+    },
+    {
+      "level"       : 24,
+      "enemy_tanks" : [ 10, 4, 4, 2 ],
+      "description" : [
+        "....CC..BBCC.........B....",
+        "....CC..BB...........B....",
+        "....BB..BBTT..BBBBBBBB....",
+        "....BB..BBTT....BBBBBB....",
+        "..TTTT..BBTT.BB.......CCCC",
+        "..TTTT..BBTT.BB.......CCCC",
+        "TTTTTTTTTTTTBBBBBB...BBB..",
+        "TTTTTTTTTTTTBBBBBB...BBB..",
+        "....TTTT....CCBB...BBBBB.B",
+        "....TTTTBBBB..BB...BBB...B",
+        "BBCC....BBBB......BBBB...B",
+        "BB....BB..........BB.....B",
+        ".B....BBIIIIIIIIIIIIIIIIII",
+        ".B..BBBBIIIIIIIIIIIIIIIIII",
+        ".B..BB..IIIIIIIIIIIIIIIIII",
+        ".B......IIIIIIIIIIIIIIIIII",
+        "....CC..IIIIIIIIIIIIIIIIII",
+        "....CC..IIIIIIIIIIIIIIIIII",
+        "BB..BB..IIIIIIIIIIIIIIIIII",
+        "BB..BB..IIIIIIIIIIIIIIIIII",
+        ".B..BB..IIIIIIIIIIIIIIIIII",
+        ".B..BB..IIIIIIIIIIIIIIIIII",
+        ".B..BB..........IIIIIIIIII",
+        ".B..BB.....BBBB.IIIIIIIIII",
+        "....BB.....B..B...IIIIIIII",
+        "...........B..B...IIIIIIII"
+      ]
+    },
+    {
+      "level"       : 25,
+      "enemy_tanks" : [ 0, 8, 2, 10 ],
+      "description" : [
+        "......CC..BB..BB..BB..CC..",
+        "......CC..BB..BB..BB..CC..",
+        "..BB..BB..........CC......",
+        "..BB..BB..........CC......",
+        "..BB..BB....CC....CC..CCCC",
+        "..BB..BB....CC....CC..CCCC",
+        "..BB......BB..CCBB......CC",
+        "..BB......BB..CCBB......CC",
+        "........BBBB..BBBB..CC....",
+        "........BBBB..BBBB..CC....",
+        "....CC..BB....BBBB..BBBB..",
+        "....CC..BB....BBBB..BBBB..",
+        "CC..CC....BB..CC....CCBB..",
+        "CC..CC....BB..CC....CCBB..",
+        "....BBBB..BB......BBCC....",
+        "....BBBB..BB......BBCC....",
+        "..CCBBBB..BBBB..BBBB....BB",
+        "..CCBBBB..BBBB..BBBB....BB",
+        "..BB......BBCC........BBBB",
+        "..BB......BBCC........BBBB",
+        "......BB..BBBBCC..CC....BB",
+        "......BB..BBBBCC..CC....BB",
+        "......BB..........BBCC....",
+        "BB..BBBB...BBBB...BBCC....",
+        "BB..BB.....B..B...BBBBBB..",
+        "BB..BB.....B..B...BBBBBB.."
+      ]
+    },
+    {
+      "level"       : 26,
+      "enemy_tanks" : [ 4, 6, 4, 6 ],
+      "description" : [
+        "....WWWW..................",
+        "....WWWW..................",
+        "......WWTT..B.............",
+        "CC....WWTT..B.............",
+        "TT..........C...B...WWWW..",
+        "TTCC........C...B...WWWW..",
+        "TTTT..CC...B....C.TTWW....",
+        "TTTT....BB.B....C.TTWW....",
+        "TTTTTT....CC...B..........",
+        "TTTTTT....CCBB.B........CC",
+        "TTTTCC.....B..CC........TT",
+        "TTTT..CC...B..CCBB....CCTT",
+        "TTCC....BBCC...B..CC..TTTT",
+        "TT........CC...B......TTTT",
+        "..........B.BBCC....TTTTTT",
+        "..........B...CC....TTTTTT",
+        "....WWTT.C....B.BB..CCTTTT",
+        "....WWTT.C....B...CC..TTTT",
+        "..WWWW...B...C..........TT",
+        "..WWWW...B...C..........TT",
+        ".............B..TTWW....CC",
+        ".............B..TTWW......",
+        "CC................WWWW....",
+        "CC.........BBBB...WWWW....",
+        "CCCC.......B..B.........CC",
+        "CCCC.......B..B.........CC"
+      ]
+    },
+    {
+      "level"       : 27,
+      "enemy_tanks" : [ 2, 8, 2, 8 ],
+      "description" : [
+        "........CC................",
+        "........CC................",
+        "CCCC....CC....CCCC........",
+        "CCCC....CC....CCCC........",
+        "..CC....CC......CC..CCCCTT",
+        "..CC....CC......CC..CCCCTT",
+        "..CC....CCCCCC..TT..CC....",
+        "..CC....CCCCCC..TT..CC....",
+        "..BB........CC..CCCCCC....",
+        "..BB........CC..CCCCCC....",
+        "TTCCCC..CCBBCCBBBB........",
+        "TTCCCC..CCBBCCBBBB........",
+        "....CCTTCCTT....BB....CCCC",
+        "....CCTTCCTT....BB....CCCC",
+        "....CC....TT....CC....CC..",
+        "....CC....TT....CC....CC..",
+        "....BB....CC....CCCCBBCC..",
+        "....BB....CC....CCCCBBCC..",
+        "TTCCCCCCTTTTBBCCCC..BBCC..",
+        "TTCCCCCCTTTTBBCCCC..BBCC..",
+        "......BB........TTTT..BB..",
+        "......BB........TTTT..BB..",
+        "......CC..........TT..BB..",
+        "......CC...BBBB...TT..BB..",
+        "......CC...B..B...CC..BB..",
+        "......CC...B..B...CC..BB.."
+      ]
+    },
+    {
+      "level"       : 28,
+      "enemy_tanks" : [ 15, 2, 2, 1 ],
+      "description" : [
+        ".....................CC...",
+        ".....................CC...",
+        "....................CC....",
+        "............CC......CC....",
+        "............TT....BBB.....",
+        "..........BBTTBB..BBB.....",
+        "..........TTTTTT..BBB.....",
+        "........CCTTTTTTCCBBB.....",
+        "........TTTTIITTTTBBB.....",
+        "......BBTTTTIITTTTBBB.....",
+        "......TTTTIIIIIITTTTB.....",
+        "....CCTTTTIIIIIITTTTB.....",
+        "....TTTTIIIIIIIIIITTTT....",
+        "..BBTTTTIIIIIIIIIITTTTBB..",
+        "..TTTTIIIIIIIIIIIIIITTTT..",
+        "CCTTTTIIIIIIIIIIIIIITTTTCC",
+        "TTTTIIIIIIIIIIIIIIIIIITTTT",
+        "TTTTIIIIIIIIIIIIIIIIIITTTT",
+        "..TTIIIIIIIIIIIIIIIIIITT..",
+        "..TTIIIIIIIIIIIIIIIIIITT..",
+        "..TTIIIIIIIIIIIIIIIIIITT..",
+        "..TTIIIIIIIIIIIIIIIIIITT..",
+        "..TTIIIIII......IIIIIITT..",
+        "..TTIIIIII.BBBB.IIIIIITT..",
+        "..TTIIII...B..B...IIIITT..",
+        "..TTIIII...B..B...IIIITT.."
+      ]
+    },
+    {
+      "level"       : 29,
+      "enemy_tanks" : [ 0, 4, 10, 6 ],
+      "description" : [
+        "....................BB....",
+        "....................BB....",
+        "..BBWWWW..CC..BB..........",
+        "..BBWWWW..CC..BB..........",
+        "....WWWWBBTTTTTTWWWW..CC..",
+        "....WWWWBBTTTTTTWWWW..CC..",
+        "..........TTTTTTWWWWBB....",
+        "..........TTTTTTWWWWBB....",
+        "..CC....WWWW..TT..........",
+        "..CC....WWWW..TT..........",
+        "TTTTBB..WWWWCC........BB..",
+        "TTTTBB..WWWWCC........BB..",
+        "TTTTTT............CC....CC",
+        "TTTTTT............CC....CC",
+        "..BBWWWW..BB..............",
+        "..BBWWWW..BB..............",
+        "CC..WWWWTTTTWWWWTTTT..BB..",
+        "CC..WWWWTTTTWWWWTTTT..BB..",
+        "........TT..WWWWTTTTWWWW..",
+        "........TT..WWWWTTTTWWWW..",
+        "......CCTT......TTTTWWWW..",
+        "......CCTT......TTTTWWWW..",
+        "....BB..BB................",
+        "....BB..BB.BBBB...........",
+        "BB.........B..B...BBCC....",
+        "BB.........B..B...BBCC...."
+      ]
+    },
+    {
+      "level"       : 30,
+      "enemy_tanks" : [ 4, 8, 4, 4 ],
+      "description" : [
+        "..........................",
+        "..........................",
+        "..........................",
+        "..........BBBB......CC....",
+        "..........TTTT......TT....",
+        "..CCCC..BBTTTTCC..BBTTBB..",
+        "..TTTT..TTTTTTTT..TTTTTT..",
+        "BBTTTTBBTTTTTTTTBBTTTTTTBB",
+        "TTTTTTTTTTTTTTTTTTTTTTTTTT",
+        "TTTTTTTTTTTTTTTTTTTTTTTTTT",
+        "CCTTWWTTTTTTTTTTWWTTTTTTTT",
+        "CCTTWWTTTTTTTTTTWWTTTTTTTT",
+        "TTTTWWWWWWTTTTTTWWWWWWTTCC",
+        "TTTTWWWWWWTTTTTTWWWWWWTTCC",
+        "TTTTTTTTWWTTCCTTTTTTWWTTTT",
+        "TTTTTTTTWWTTCCTTTTTTWWTTTT",
+        "TTTTTTTTTTTTTTTTTTTTTTTTTT",
+        "TTTTTTTTTTTTTTTTTTTTTTTTTT",
+        "TTTTTTTTTTBBBBTTTTTTTTTTCC",
+        "TTTTTTTTTT....TTTTTTTTTT..",
+        "CCTTTTTTBB....BBTTTTTTCC..",
+        "..TTTTTT........TTTTTT....",
+        "..CCBBBB........BBBBBB....",
+        "...........BBBB...........",
+        "...........B..B...........",
+        "...........B..B..........."
+      ]
+    },
+    {
+      "level"       : 31,
+      "enemy_tanks" : [ 0, 8, 6, 6 ],
+      "description" : [
+        "......WW........WW........",
+        "......WW........WW........",
+        "WWWW..WW..WWWWWWWW..WWWWWW",
+        "WWWW..WW..WWWWWWWW..WWWWWW",
+        "TTTTBB....BB....WW..WWTTWW",
+        "TTTTBB....BB....WW..WWTTWW",
+        "TTWWWWWWWW..CC....BBTTTTTT",
+        "TTWWWWWWWW..CC....BBTTTTTT",
+        "TTTT..WW....WW..WWWWWWWWTT",
+        "TTTT..WW....WW..WWWWWWWWTT",
+        "WWWW..WW..WWWW....WW......",
+        "WWWW..WW..WWWW....WW......",
+        "....BBTTBB..BBTT..WW....WW",
+        "....BBTTBB..BBTT..WW....WW",
+        "..WWWWTTWWWWWWWW..TTBB..WW",
+        "..WWWWTTWWWWWWWW..TTBB..WW",
+        "BB....BB....WW..TTTTWW..WW",
+        "BB....BB....WW..TTTTWW..WW",
+        "WWWW..WWWW..WWBBWWWWWW....",
+        "WWWW..WWWW..WWBBWWWWWW....",
+        "....BB..TTTT....TTWW....WW",
+        "....BB..TTTT....TTWW....WW",
+        "..WWWWWWTT........WW..WWWW",
+        "..WWWWWWTT.BBBB...WW..WWWW",
+        "..WW.......B..B...........",
+        "..WW.......B..B..........."
+      ]
+    },
+    {
+      "level"       : 32,
+      "enemy_tanks" : [ 6, 4, 2, 8 ],
+      "description" : [
+        "IIIIIIIIIIII..IIIIIIIIIIII",
+        "IIIIIIIIIIII..IIIIIIIIIIII",
+        "IIIIIIIIIIIIIIIIIIIIIIIIII",
+        "IIIIIIIIIIIIIIIIIIIIIIIIII",
+        "IIIIIIBBIIIIIIIIIIBBIIIIII",
+        "IIIIIIBBIIIIIIIIIIBBIIIIII",
+        "IIBB..BB..BBIIBB..BB..BBII",
+        "IIBB..BB..BBIIBB..BB..BBII",
+        "IIBBBBBB..........BBBBBBII",
+        "II....BB..........BB....II",
+        "IIIIIIBB..BBCCBB..BBIIIIII",
+        "IIIIIIBBBBBBCCBBBBBBIIIIII",
+        "CCIIIIII..CC..CC..IIIIIICC",
+        "CCIIIIII..........IIIIIICC",
+        "IIIIIIII..........IIIIIIII",
+        "IIIIIIII..BB..BB..IIIIIIII",
+        "IIIIIIII..BB..BB..IIIIIIII",
+        "IIIIIIII..BB..BB..IIIIIIII",
+        "IIIIIIBB..........BBIIIIII",
+        "IIIIIIBB....BB....BBIIIIII",
+        "IIBBIIBB..CCCCCC..BBIIBBII",
+        "IIBBIIBB..........BBIIBBII",
+        "..BB..BB..........BB..BB..",
+        "..BBBBBB...BBBB...BBBBBB..",
+        "..BB.......B..B.......BB..",
+        "...........B..B..........."
+      ]
+    },
+    {
+      "level"       : 33,
+      "enemy_tanks" : [ 0, 8, 4, 8 ],
+      "description" : [
+        "........CC........CC......",
+        "........CC........CC......",
+        "..CC......CC....CCTTTT....",
+        "..CC......CC....CCTTTT....",
+        "....CC........CCTT..C.....",
+        "....CC........CCTTCCC.....",
+        "......CC..TTTTTTTTTT...C..",
+        "......CC..TTTTTTTTTT...C..",
+        "..C.....CCTTTTCCTT....CC..",
+        "..C.....CCTTTTCCTT....CC..",
+        "..CCC.TT..CCTTTTCC.....C..",
+        "....C.TT..CCTTTTCC.....C..",
+        "....TTTTTTTTTT....CC......",
+        "....TTTTTTTTTT....CC......",
+        "....C.TT..CCTT......CC....",
+        "..CCC.TT..CCTT......CC....",
+        "..TTTTTTCC..CC........CC..",
+        "..TTTTTTCC..CC..CC....CC..",
+        "TTTTTTCC.........C........",
+        "TTTTTTCC.........C........",
+        "....CC.................CCC",
+        "....CC.................CCC",
+        "....................C.....",
+        "...........BBBB...CCC.....",
+        "C..........B..B...........",
+        "C...CC.....B..B..........."
+      ]
+    },
+    {
+      "level"       : 34,
+      "enemy_tanks" : [ 0, 10, 4, 6 ],
+      "description" : [
+        "........B..B..............",
+        "........B..B..............",
+        "B.B.B..B..B.....B.B.......",
+        "B.B.B..B..B.....B.B.......",
+        "B.B.B.BBBB......B.BBB.....",
+        "B.B.B.BBBB......B.BBB.....",
+        ".B.B..BBB......BB.BBBB....",
+        ".B.B..BBB......BB.BBBB....",
+        "..B...BB.BB...B.BBBBBB....",
+        "..B...BB.BB...B.BBBBBB....",
+        "..B..B....BBB.BB.B.BBB....",
+        "..B..B....BBB.BB.B.BBB....",
+        "..B......BBBBBB...B.BB....",
+        "..B......BBBBBB...B.BB....",
+        "...B....B.BBBBB...B.BB....",
+        "...B....B.BBBBB...B.BB....",
+        "...BBBBB..BBBBBB..B.B.BBBB",
+        "...B......BBBBBB..B.B...BB",
+        "...B.....BB.BB.BB.B.B..B.B",
+        "...B.....BB.BB.BB.B.B..B.B",
+        "....B...BB.BB.BBBB.....B..",
+        "....B...BB.BB.BBBB.....B..",
+        "....B..BB.......BBB...B...",
+        "....B..BB..BBBB.BBB...B...",
+        "...........B..B...BBBB....",
+        "...........B..B...BBBB...."
+      ]
+    },
+    {
+      "level"       : 35,
+      "enemy_tanks" : [ 0, 6, 4, 10 ],
+      "description" : [
+        "..........................",
+        "..........................",
+        "........BB..BB............",
+        "........BB..BB............",
+        "TT....TTBBTTBBTT....TT....",
+        "TT....TTBBTTBBTT....TT....",
+        "BBTTTTBBBBBBBBBBTTTTBBTT..",
+        "BBTTTTBBBBBBBBBBTTTTBBTT..",
+        "BBBBBBBBCCBBCCBBBBBBBBTT..",
+        "BBBBBBBBCCBBCCBBBBBBBBTT..",
+        "WWWWWWBBBBBBBBBBWWWWWWTT..",
+        "WWWWWWBBBBBBBBBBWWWWWWTT..",
+        "WWBBBBBBBBBBBBBBBBBBWWWWTT",
+        "WWBBBBBBBBBBBBBBBBBBWWWWTT",
+        "BBBBBBWWBBBBBBWWBBBBBBTTTT",
+        "BBBBBBWWBBBBBBWWBBBBBBTTTT",
+        "BBBBWWWWWWBBWWWWWWBBBBWWWW",
+        "BBBBWWWWWWBBWWWWWWBBBBWWWW",
+        "TTWWWWTTTTTTTTTTWWWWTTWWTT",
+        "TTWWWWTTTTTTTTTTWWWWTTWWTT",
+        "..TTTT..........TTTT..TT..",
+        "..TTTT..........TTTT..TT..",
+        "..........................",
+        "...........BBBB...........",
+        "...........B..B...........",
+        "...........B..B..........."
+      ]
+    }
+  ]
+}
