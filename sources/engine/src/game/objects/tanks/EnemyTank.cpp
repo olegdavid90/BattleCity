@@ -103,8 +103,8 @@ void EnemyTank::update()
 	if (this->m_isFrozen)
 	{ return; }
 
-	//if (utils::rand() % 32 == 0) // FIXME
-	//{ this->fire(); }
+	if (utils::rand() % 32 == 0)
+	{ this->fire(); }
 
 	this->m_Command(this);
 
