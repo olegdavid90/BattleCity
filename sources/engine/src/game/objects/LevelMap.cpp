@@ -147,10 +147,7 @@ void game::LevelMap::correctLevelMap(std::vector<std::string>& level_desctiption
 {
 	this->m_pEagleWall.reserve(std::size(EMPTY_TILE));
 
-	if (level_desctiption.size() > BLOCKS_PER_GAME_HEIGHT)
-	{
-		level_desctiption.resize(BLOCKS_PER_GAME_HEIGHT);
-	}
+	level_desctiption.resize(BLOCKS_PER_GAME_HEIGHT);
 	for (auto& currentRow : level_desctiption)
 	{
 		if (currentRow.length() > BLOCKS_PER_GAME_WIDTH)

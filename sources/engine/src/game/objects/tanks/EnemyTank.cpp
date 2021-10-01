@@ -103,22 +103,17 @@ void EnemyTank::update()
 	if (this->m_isFrozen)
 	{ return; }
 
-	if (utils::rand() % 32 == 0)
-	{ this->fire(); }
+	//if (utils::rand() % 32 == 0) // FIXME
+	//{ this->fire(); }
 
-	if (this->isMoving())
-	{
-		++this->m_FramesCount;
-
-		if (this->m_FramesCount & m_SpeedMask)
-		{
-			this->setPosition(this->getPosition() + this->getDirection());
-			this->m_TankAnimator.update();
-		}
-	}
-
-	this->start();
 	this->m_Command(this);
+
+	++this->m_FramesCount;
+	if (this->m_FramesCount & m_SpeedMask)
+	{
+		this->setPosition(this->getPosition() + this->getDirection());
+		this->m_TankAnimator.update();
+	}
 }
 
 //----------------------------------------------------------------------------//
@@ -154,8 +149,8 @@ void EnemyTank::destroy(bool desyroyed_with_bullet)
 	if (desyroyed_with_bullet == false)
 	{
 		this->m_pParentLevel->setExplosion(this->getPosition());
-		this->m_Owner->removeTank();
 		this->m_eTankState = ETankState::Destroyed;
+		this->m_Owner->removeTank();
 		return;
 	}
 
@@ -175,7 +170,6 @@ void EnemyTank::destroy(bool desyroyed_with_bullet)
 		const unsigned score{
 			(static_cast<unsigned>(this->getSubType()) + 1) * 100
 		};
-
 		this->m_pParentLevel->setExplosion(this->getPosition(), score);
 		this->m_eTankState = ETankState::Destroyed;
 		this->m_Owner->removeTank();
@@ -225,8 +219,6 @@ void EnemyTank::changeScenario()
 //----------------------------------------------------------------------------//
 void EnemyTank::invertDirection()
 {
-	//LOG_INFO("invert direction");
-
 	switch (this->getOrientation())
 	{
 	case EDirection::Top:
@@ -257,8 +249,6 @@ void EnemyTank::setRandomDirection()
 //----------------------------------------------------------------------------//
 void EnemyTank::rotateClockwise()
 {
-	//LOG_INFO("rotate clockwise");
-
 	switch (this->getOrientation())
 	{
 	case EDirection::Top:
@@ -281,8 +271,6 @@ void EnemyTank::rotateClockwise()
 //----------------------------------------------------------------------------//
 void EnemyTank::rotateAntiClockwise()
 {
-	//LOG_INFO("rotate anticlockwise");
-
 	switch (this->getOrientation())
 	{
 	case EDirection::Top:

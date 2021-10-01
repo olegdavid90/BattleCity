@@ -1,3 +1,3 @@
-source/build/*
+sources/build/*
 bin/Debug/*
 bin/Release/*

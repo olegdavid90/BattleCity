@@ -21,6 +21,6 @@ void game::Ice::render() const
 //----------------------------------------------------------------------------//
 bool game::Ice::collides(const DynamicObject* object) const
 {
-	return false;
+	return (object->isTank() && object->isPlayer());
 }
 

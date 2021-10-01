@@ -159,13 +159,17 @@ bool ResourcesManager::load(const std::string& relative_path)
 	{
 		for (const auto& currentLevel : itrLevel->value.GetArray())
 		{
-			const auto& descriptionArray{ currentLevel["description"].GetArray() };
 			std::vector<std::string> levelDescription{};
-			levelDescription.reserve(descriptionArray.Size());
-
-			for (const auto& currentRow : descriptionArray )
+			if (const auto itrDescription{ currentLevel.FindMember("description") };
+				itrDescription != currentLevel.MemberEnd())
 			{
-				levelDescription.emplace_back(currentRow.GetString());
+				const auto& descriptionArray{ currentLevel["description"].GetArray() };
+				levelDescription.reserve(descriptionArray.Size());
+
+				for (const auto& currentRow : descriptionArray)
+				{
+					levelDescription.emplace_back(currentRow.GetString());
+				}
 			}
 
 			std::array<unsigned, 4> tanksCount{};
@@ -220,6 +224,7 @@ void ResourcesManager::free()
 void ResourcesManager::saveConfig(const std::string& config)
 {
 	m_SavedConfig = config;
+	utils::stringToFile(RESOURCE_PATH + m_ConfigPath, m_SavedConfig);
 }
 
 //----------------------------------------------------------------------------//
@@ -364,7 +369,8 @@ bool ResourcesManager::loadSprite2D(
 		m_Sprites.try_emplace(
 			sprite_name,
 			std::make_unique<renderer::Sprite2D>(
-				getShaderProgram(shader_name), getTexture2D(texture_name), std::move(tiles)
+				getShaderProgram(shader_name),
+				getTexture2D(texture_name), std::move(tiles)
 			)
 		)
 	};
@@ -381,7 +387,10 @@ void ResourcesManager::loadLevel(
 	std::vector<std::string>& level_rows, std::array<unsigned, 4> tanks_count
 )
 {
-	m_LevelsDescriptions.emplace_back(std::move(level_rows));
+	if (level_rows.empty() == false)
+	{
+		m_LevelsDescriptions.emplace_back(std::move(level_rows));
+	}
 	m_EnemyTanksCounts.emplace_back(tanks_count);
 }
 
@@ -433,12 +442,7 @@ std::vector<std::string>& ResourcesManager::getLevelDescription(unsigned index)
 		return emptyLevel;
 	}
 
-	if (index < m_LevelsDescriptions.size())
-	{
-		return m_LevelsDescriptions[index-1];
-	}
-	unsigned idx{ (index % m_LevelsDescriptions.size()) };
-	return m_LevelsDescriptions[(index%m_LevelsDescriptions.size())];
+	return m_LevelsDescriptions[(index-1)%m_LevelsDescriptions.size()];
 }
 
 //----------------------------------------------------------------------------//
@@ -447,15 +451,16 @@ ResourcesManager::getEnemyTanksCount(unsigned index)
 {
 	if (m_EnemyTanksCounts.empty())
 	{
-		static std::array<unsigned, 4> countForEmptyLevel{ 20 };
-		return countForEmptyLevel;
+		static std::array<unsigned, 4> emptyTanksCounts{ 20 };
+		return emptyTanksCounts;
 	}
 
 	if (index < m_EnemyTanksCounts.size())
 	{
 		return m_EnemyTanksCounts[index-1];
 	}
-	return m_EnemyTanksCounts[(index%m_EnemyTanksCounts.size())];
+
+	return m_EnemyTanksCounts[(index - 1)%m_LevelsDescriptions.size()];
 }
 
 //----------------------------------------------------------------------------//
@@ -490,5 +495,3 @@ unsigned ResourcesManager::getSavedValue(const std::string& key)
 
 
 } /* !namespace game */
-
-

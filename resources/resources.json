@@ -742,11 +742,11 @@
 			"tiles" : [
         {
           "subTexture" : "player_small_top1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "player_small_top2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -758,11 +758,11 @@
 			"tiles" : [
         {
           "subTexture" : "player_small_bottom1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "player_small_bottom2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -774,11 +774,11 @@
 			"tiles" : [
         {
           "subTexture" : "player_small_left1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "player_small_left2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -790,11 +790,11 @@
 			"tiles" : [
         {
           "subTexture" : "player_small_right1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "player_small_right2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},		
@@ -806,11 +806,11 @@
 			"tiles" : [
         {
           "subTexture" : "player_light_top1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "player_light_top2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -822,11 +822,11 @@
 			"tiles" : [
         {
           "subTexture" : "player_light_bottom1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "player_light_bottom2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -838,11 +838,11 @@
 			"tiles" : [
         {
           "subTexture" : "player_light_left1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "player_light_left2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -854,11 +854,11 @@
 			"tiles" : [
         {
           "subTexture" : "player_light_right1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "player_light_right2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},		
@@ -870,11 +870,11 @@
 			"tiles" : [
         {
           "subTexture" : "player_medium_top1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "player_medium_top2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -886,11 +886,11 @@
 			"tiles" : [
         {
           "subTexture" : "player_medium_bottom1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "player_medium_bottom2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -902,11 +902,11 @@
 			"tiles" : [
         {
           "subTexture" : "player_medium_left1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "player_medium_left2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -918,11 +918,11 @@
 			"tiles" : [
         {
           "subTexture" : "player_medium_right1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "player_medium_right2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},		
@@ -934,11 +934,11 @@
 			"tiles" : [
         {
           "subTexture" : "player_heavy_top1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "player_heavy_top2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -950,11 +950,11 @@
 			"tiles" : [
         {
           "subTexture" : "player_heavy_bottom1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "player_heavy_bottom2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -966,11 +966,11 @@
 			"tiles" : [
         {
           "subTexture" : "player_heavy_left1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "player_heavy_left2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -982,11 +982,11 @@
 			"tiles" : [
         {
           "subTexture" : "player_heavy_right1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "player_heavy_right2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},		
@@ -998,11 +998,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_regular_white_top1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_regular_white_top2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -1014,11 +1014,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_regular_white_bottom1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_regular_white_bottom2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -1030,11 +1030,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_regular_white_left1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_regular_white_left2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -1046,11 +1046,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_regular_white_right1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_regular_white_right2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},		
@@ -1062,11 +1062,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_highspeed_white_top1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_highspeed_white_top2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -1078,11 +1078,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_highspeed_white_bottom1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_highspeed_white_bottom2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -1094,11 +1094,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_highspeed_white_left1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_highspeed_white_left2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -1110,11 +1110,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_highspeed_white_right1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_highspeed_white_right2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},		
@@ -1126,11 +1126,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_rapidfire_white_top1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_rapidfire_white_top2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -1142,11 +1142,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_rapidfire_white_bottom1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_rapidfire_white_bottom2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -1158,11 +1158,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_rapidfire_white_left1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_rapidfire_white_left2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -1174,11 +1174,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_rapidfire_white_right1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_rapidfire_white_right2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},		
@@ -1190,11 +1190,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_armored_white_top1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_armored_white_top2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -1206,11 +1206,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_armored_white_bottom1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_armored_white_bottom2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -1222,11 +1222,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_armored_white_left1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_armored_white_left2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -1238,11 +1238,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_armored_white_right1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_armored_white_right2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},		
@@ -1254,11 +1254,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_armored_yellow_top1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_armored_yellow_top2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -1270,11 +1270,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_armored_yellow_bottom1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_armored_yellow_bottom2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -1286,11 +1286,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_armored_yellow_left1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_armored_yellow_left2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -1302,11 +1302,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_armored_yellow_right1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_armored_yellow_right2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},		
@@ -1318,11 +1318,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_armored_green1_top1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_armored_green1_top2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -1334,7 +1334,7 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_armored_green1_bottom1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture": "enemy_armored_green1_bottom2",
@@ -1350,11 +1350,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_armored_green1_left1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_armored_green1_left2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -1366,11 +1366,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_armored_green1_right1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_armored_green1_right2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},		
@@ -1382,11 +1382,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_armored_green2_top1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_armored_green2_top2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -1398,11 +1398,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_armored_green2_bottom1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_armored_green2_bottom2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -1414,11 +1414,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_armored_green2_left1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_armored_green2_left2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -1430,11 +1430,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_armored_green2_right1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_armored_green2_right2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},		
@@ -1446,11 +1446,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_regular_red_top1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_regular_red_top2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -1462,11 +1462,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_regular_red_bottom1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_regular_red_bottom2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -1478,11 +1478,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_regular_red_left1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_regular_red_left2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -1494,11 +1494,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_regular_red_right1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_regular_red_right2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},		
@@ -1510,11 +1510,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_highspeed_red_top1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_highspeed_red_top2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -1526,11 +1526,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_highspeed_red_bottom1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_highspeed_red_bottom2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -1542,11 +1542,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_highspeed_red_left1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_highspeed_red_left2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -1558,11 +1558,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_highspeed_red_right1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_highspeed_red_right2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},		
@@ -1574,11 +1574,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_rapidfire_red_top1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_rapidfire_red_top2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -1590,11 +1590,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_rapidfire_red_bottom1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_rapidfire_red_bottom2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -1606,11 +1606,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_rapidfire_red_left1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_rapidfire_red_left2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -1622,11 +1622,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_rapidfire_red_right1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_rapidfire_red_right2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},		
@@ -1638,11 +1638,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_armored_red_top1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_armored_red_top2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -1654,11 +1654,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_armored_red_bottom1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_armored_red_bottom2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -1670,11 +1670,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_armored_red_left1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_armored_red_left2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		},
@@ -1686,11 +1686,11 @@
 			"tiles" : [
         {
           "subTexture" : "enemy_armored_red_right1",
-          "duration"   :  8
+          "duration"   :  4
         },
         {
           "subTexture" : "enemy_armored_red_right2",
-          "duration"   :  8
+          "duration"   :  4
         }
       ]
 		}
@@ -2826,9 +2826,9 @@
       ]
     },
     {
-      "level"       : 35,
-      "enemy_tanks" : [ 0, 6, 4, 10 ],
-      "description" : [
+      "level"      : 35,
+      "enemy_tanks": [ 0, 6, 4, 10 ],
+      "description": [
         "..........................",
         "..........................",
         "........BB..BB............",

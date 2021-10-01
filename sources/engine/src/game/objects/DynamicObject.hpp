@@ -26,6 +26,7 @@ class DynamicObject : public GameObject
 	virtual void onCollision(const DynamicObject*);
 	virtual void setOrientation(EOrientation orientation);
 	virtual void setDirection(const tps::Vec2i& direction);
+	virtual void setCollision(bool is_collision);
 	virtual void start();
 	virtual void stop();
 	virtual bool isTank()                    const;
@@ -40,6 +41,7 @@ class DynamicObject : public GameObject
 	EOrientation  m_eOrientation{ EOrientation::Top };
 	tps::Vec2i    m_Direction   { 0, -1 };
 	bool          m_isMoving    { false };
+	bool          m_hasCollision{ false };
 
 }; /* !class DynamicObject */
 

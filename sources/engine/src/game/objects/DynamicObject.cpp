@@ -96,5 +96,11 @@ void DynamicObject::setDirection(const tps::Vec2i& direction)
 	this->m_Direction = direction;
 }
 
+//----------------------------------------------------------------------------//
+void DynamicObject::setCollision(bool is_collision)
+{
+	this->m_hasCollision = is_collision;
+}
+
 
 } /* !namespace game */

@@ -1,8 +1,9 @@
 #include "PlayerTank.hpp"
-#include "game/objects/Bullet.hpp"
-#include "game/states/Level.hpp"
-#include "game/InputHandler.hpp"
 #include "system/log.hpp"
+#include "game/states/Level.hpp"
+#include "game/objects/Ice.hpp"
+#include "game/objects/Bullet.hpp"
+#include "game/InputHandler.hpp"
 #include "game/ResourcesManager.hpp"
 #include "renderer/Sprite2D.hpp"
 
@@ -21,22 +22,12 @@ game::PlayerTank::PlayerTank()
 	, m_hasShield     { false }
 	, m_isCooldownTime{ false }
 	, m_onIce         { false }
+	, m_isSlipping    { false }
 {
 	this->m_Health = 2;
 	this->m_pShieldSprite->setSize(this->getSize());
-	this->m_ShieldTimer.setCallback ([this] { this->m_hasShield = false; });
-	this->m_CooldownTimer.setCallback([this] { this->m_isCooldownTime = true; });
-	this->m_RespawnTimer.setCallback(
-		[this]()
-		{
-			this->setShield(2);
-			this->m_eTankState = ETankState::Active;		                                   	  
-			this->setOrientation(EDirection::Top);
-			this->m_TankAnimator.reset(
-				this->m_pTankSprites[static_cast<unsigned>(this->getOrientation())]
-			);
-		}
-	);
+	this->initTimers();
+
 	for (auto& pBullet : this->m_pBullets)
 	{
 		pBullet = std::make_unique<Bullet>(this);
@@ -95,7 +86,8 @@ void game::PlayerTank::update()
 		this->m_ShieldTimer.update();
 	}
 
-	if (this->isMoving())
+
+	if (this->isMoving() || this->m_isSlipping)
 	{
 		++this->m_FramesCount;
 		this->m_FramesCount &= 0x3;
@@ -103,8 +95,17 @@ void game::PlayerTank::update()
 		if (this->m_FramesCount != 0)
 		{
 			this->setPosition(this->getPosition() + this->getDirection());
-			this->m_TankAnimator.update();
+			if (this->isMoving())
+			{
+				this->m_TankAnimator.update();
+			}
+			this->m_SlippingTimer.update();
 		}
+	}
+	if (this->m_hasCollision == false)
+	{
+		this->stop();
+		this->m_onIce = false;
 	}
 	this->m_CooldownTimer.update();
 }
@@ -117,6 +118,31 @@ void game::PlayerTank::Reset()
 	this->setPosition(PLAYER_RESPAWN_POSITION);
 	this->loadSprites();
 	this->m_RespawnTimer.start(1);
+}
+
+//----------------------------------------------------------------------------//
+void game::PlayerTank::initTimers()
+{
+	this->m_ShieldTimer.setCallback([this] { this->m_hasShield = false; });
+	this->m_CooldownTimer.setCallback([this] { this->m_isCooldownTime = true; });
+	this->m_RespawnTimer.setCallback(
+		[this]()
+		{
+			this->setShield(2);
+			this->m_eTankState = ETankState::Active;
+			this->setOrientation(EDirection::Top);
+			this->m_TankAnimator.reset(
+				this->m_pTankSprites[static_cast<unsigned>(this->getOrientation())]
+			);
+		}
+	);
+	this->m_SlippingTimer.setCallback(
+		[this]()
+		{
+			this->m_isSlipping = false;
+			this->stop();
+		}
+	);
 }
 
 //----------------------------------------------------------------------------//
@@ -160,28 +186,29 @@ void game::PlayerTank::updateInput()
 	if (keys[KEY_J])
 	{ this->fire(); }
     
-	this->stop();
-	if (this->m_onIce == false)
+	if (keys[KEY_W])
 	{
-		if (keys[KEY_W])
+		this->setOrientation(Tank::EOrientation::Top);
+	}
+	else if (keys[KEY_S])
+	{
+		this->setOrientation(Tank::EOrientation::Bottom);
+	}
+	else if (keys[KEY_A])
+	{
+		this->setOrientation(Tank::EOrientation::Left);
+	}
+	else if (keys[KEY_D])
+	{
+		this->setOrientation(Tank::EOrientation::Right);
+	}
+	else if (this->isMoving())
+	{
+		this->stop();
+		if (this->m_onIce)
 		{
-			this->setOrientation(Tank::EOrientation::Top);
-			this->start();
-		}
-		else if (keys[KEY_S])
-		{
-			this->setOrientation(Tank::EOrientation::Bottom);
-			this->start();
-		}
-		else if (keys[KEY_A])
-		{
-			this->setOrientation(Tank::EOrientation::Left);
-			this->start();
-		}
-		else if (keys[KEY_D])
-		{
-			this->setOrientation(Tank::EOrientation::Right);
-			this->start();
+			this->m_isSlipping = true;
+			this->m_SlippingTimer.start(21);
 		}
 	}
 }
@@ -228,6 +255,31 @@ void game::PlayerTank::setLevel(Level* parent_level)
 }
 
 //----------------------------------------------------------------------------//
+void game::PlayerTank::onCollision(const StaticObject* object)
+{
+	if (typeid(*object) != typeid(Ice))
+	{
+		Tank::onCollision(object);
+		this->m_isSlipping = false;
+	}
+	else
+	{
+		this->m_onIce = true;
+	}
+}
+
+//----------------------------------------------------------------------------//
+void game::PlayerTank::setOrientation(EOrientation orientation)
+{
+	this->start();
+
+	if (this->m_isSlipping == false)
+	{
+		Tank::setOrientation(orientation);
+	}
+}
+
+//----------------------------------------------------------------------------//
 unsigned game::PlayerTank::getSubType() const
 {
 	return static_cast<unsigned>(this->m_eSubType);
@@ -268,4 +320,11 @@ void game::PlayerTank::fire()
 		this->m_isCooldownTime = false;
 		this->m_CooldownTimer.start(8);
 	}
+}
+
+//----------------------------------------------------------------------------//
+void game::PlayerTank::stop()
+{
+	DynamicObject::stop();
+	this->m_isSlipping = false;
 }

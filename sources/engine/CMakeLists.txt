@@ -49,18 +49,10 @@ set(
 		"src/game/states/LevelFinish.cpp"
 		"src/game/states/StartScreen.hpp"
 		"src/game/states/StartScreen.cpp"
-		"src/game/objects/tanks/Tank.hpp"
-		"src/game/objects/tanks/Tank.cpp"
 		"src/game/states/PauseScreen.hpp"
 		"src/game/states/PauseScreen.cpp"
 		"src/game/states/GameOverScreen.hpp"
 		"src/game/states/GameOverScreen.cpp"
-		"src/game/objects/tanks/EnemyTank.hpp"
-		"src/game/objects/tanks/EnemyTank.cpp"
-		"src/game/objects/tanks/PlayerTank.hpp"
-		"src/game/objects/tanks/PlayerTank.cpp"
-		"src/game/objects/tanks/AIComponent.hpp"
-		"src/game/objects/tanks/AIComponent.cpp"
 		"src/game/objects/Ice.hpp"
 		"src/game/objects/Ice.cpp"
 		"src/game/objects/Tree.hpp"
@@ -95,14 +87,17 @@ set(
 		"src/game/objects/StaticObject.cpp"
 		"src/game/objects/DynamicObject.hpp"
 		"src/game/objects/DynamicObject.cpp"
+		"src/game/objects/tanks/Tank.hpp"
+		"src/game/objects/tanks/Tank.cpp"
+		"src/game/objects/tanks/EnemyTank.hpp"
+		"src/game/objects/tanks/EnemyTank.cpp"
+		"src/game/objects/tanks/PlayerTank.hpp"
+		"src/game/objects/tanks/PlayerTank.cpp"
+		"src/game/objects/tanks/AIComponent.hpp"
+		"src/game/objects/tanks/AIComponent.cpp"
 )
 
 add_library(${PROJECT_NAME} STATIC ${SOURCES})
-
-target_include_directories(${PROJECT_NAME} PUBLIC "include")
-target_include_directories(
-	${PROJECT_NAME} PRIVATE "src" "external/rapidjson/include"
-)
 
 target_compile_features(${PROJECT_NAME} PUBLIC "cxx_std_17")
 
@@ -113,7 +108,6 @@ if(WIN32)
 	set(SFML_STATIC_LIBRARIES TRUE)
 	find_package(SFML 2.5 COMPONENTS "graphics" "audio" "main" REQUIRED)
 	if(SFML_FOUND)
-		target_include_directories(${PROJECT_NAME} PRIVATE ${SFML_INCLUDE_DIR})
 		target_link_libraries(
 			${PROJECT_NAME} PUBLIC "sfml-graphics" "sfml-audio" "sfml-main"
 		)
@@ -121,12 +115,16 @@ if(WIN32)
 elseif(UNIX)
 	find_package(SFML 2.5 COMPONENTS "graphics" "audio" REQUIRED)
 	if(SFML_FOUND)
-		target_include_directories(${PROJECT_NAME} PRIVATE ${SFML_INCLUDE_DIR})
 		target_link_libraries(
 			${PROJECT_NAME} PUBLIC "sfml-graphics" "sfml-audio"
 		)
 	endif(SFML_FOUND)
 endif(WIN32)
+
+target_include_directories(${PROJECT_NAME} PUBLIC "include")
+target_include_directories(
+	${PROJECT_NAME} PRIVATE ${SFML_INCLUDE_DIR} "src" "external/rapidjson/include"
+)
 
 add_subdirectory("external/spdlog")
 target_link_libraries(${PROJECT_NAME} PRIVATE "spdlog")

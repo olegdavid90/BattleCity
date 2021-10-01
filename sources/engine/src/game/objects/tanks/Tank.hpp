@@ -2,6 +2,7 @@
 
 #include "game/objects/DynamicObject.hpp"
 #include "system/SecondsTimer.hpp"
+#include "system/FramesTimer.hpp"
 #include "renderer/Animator.hpp"
 
 #include <memory>
@@ -71,7 +72,6 @@ class Tank : public DynamicObject
 	tps::Vec2i                          m_oldPosition;
 	unsigned                            m_FramesCount;
 	int                                 m_Health;
-	bool                                m_hasBarrierAhead;
 	bool                                m_isFrozen;
 
 }; /* !class Tank */

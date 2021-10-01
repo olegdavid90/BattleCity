@@ -1,29 +1,29 @@
 #include "Tank.hpp"
+#include "system/log.hpp"
 #include "system/utils.hpp"
 #include "game/states/Level.hpp"
 #include "game/objects/Bullet.hpp"
-#include "system/log.hpp"
 #include "game/ResourcesManager.hpp"
 #include "renderer/Sprite2D.hpp"
 
 #include <algorithm>
+#include <typeinfo>
 
 namespace game {
 
 //----------------------------------------------------------------------------//
 Tank::Tank(ETankType type, const tps::Vec2i& position)
 	: DynamicObject(position, tps::Vec2i{ BLOCK_SIZE * 2, BLOCK_SIZE * 2 })
-	, m_pTankSprites   { nullptr }
-	, m_pRespawnSprite { ResourcesManager::getSprite2D("respawn") }
-	, m_TankAnimator   { this->m_pRespawnSprite }
-	, m_pParentLevel   { nullptr }
-	, m_eTankType      { type }
-	, m_eTankState     { ETankState::Respawn }
-	, m_oldPosition    { position }
-	, m_FramesCount    { 0 }
-	, m_Health         { 0 }
-	, m_hasBarrierAhead{ false }
-	, m_isFrozen       { false }
+	, m_pTankSprites  { nullptr }
+	, m_pRespawnSprite{ ResourcesManager::getSprite2D("respawn") }
+	, m_TankAnimator  { this->m_pRespawnSprite }
+	, m_pParentLevel  { nullptr }
+	, m_eTankType     { type }
+	, m_eTankState    { ETankState::Respawn }
+	, m_oldPosition   { position }
+	, m_FramesCount   { 0 }
+	, m_Health        { 0 }
+	, m_isFrozen      { false }
 {
 	this->m_pRespawnSprite->setSize(this->getSize());
 }
@@ -55,7 +55,6 @@ void Tank::setOrientation(EOrientation orientation)
 
 	DynamicObject::setOrientation(orientation);
 	this->alignmentPosition();
-	this->m_hasBarrierAhead = false;
 }
 
 //----------------------------------------------------------------------------//
@@ -85,7 +84,7 @@ bool Tank::isRespawning() const
 //----------------------------------------------------------------------------//
 bool Tank::frontTileIsBarrier() const
 {
-	return this->m_hasBarrierAhead;
+	return this->m_hasCollision;
 }
 
 //----------------------------------------------------------------------------//
@@ -97,9 +96,7 @@ void Tank::freeze(bool is_frozen)
 //----------------------------------------------------------------------------//
 void Tank::onCollision(const StaticObject* object)
 {
-	this->m_hasBarrierAhead = true;
 	DynamicObject::setPosition(this->m_oldPosition);
-	this->stop();
 }
 
 //----------------------------------------------------------------------------//
@@ -154,6 +151,7 @@ void Tank::onCollisionWithTank(const Tank* other)
 		}
 	}
 
+	this->stop();
 	DynamicObject::setPosition(this->m_oldPosition);
 }
 

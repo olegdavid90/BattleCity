@@ -39,11 +39,9 @@ void PhysicsEngine::update()
 		{ continue; }
 
 		pCurrentDynamicObject->update();
-		resolveStaticCollision(pCurrentDynamicObject);
-
-		if (pCurrentDynamicObject->isDisabled())
-		{ continue; }
-
+		pCurrentDynamicObject->setCollision(
+			resolveStaticCollision(pCurrentDynamicObject)
+		);
 		resolveDynamicCollision(itrCurrentDynamicObject);
 	}
 }
