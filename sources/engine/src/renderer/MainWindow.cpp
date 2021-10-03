@@ -22,7 +22,6 @@ void game::MainWindow::setGame(Core* game)
 
 //----------------------------------------------------------------------------//
 game::MainWindow::MainWindow()
-    : sf::RenderWindow()
 {
     sf::RenderWindow::create(
         sf::VideoMode{
@@ -77,11 +76,14 @@ void game::MainWindow::pollEvent()
 //----------------------------------------------------------------------------//
 void game::MainWindow::setIcon(const renderer::Texture2D* icon_texture)
 {
-    sf::RenderWindow::setIcon(
-        icon_texture->getSize().x,
-        icon_texture->getSize().y,
-        icon_texture->copyToImage().getPixelsPtr()
-    );
+    if (icon_texture->loaded())
+    {
+        sf::RenderWindow::setIcon(
+            icon_texture->getSize().x,
+            icon_texture->getSize().y,
+            icon_texture->copyToImage().getPixelsPtr()
+        );
+    }
 }
 
 //----------------------------------------------------------------------------//

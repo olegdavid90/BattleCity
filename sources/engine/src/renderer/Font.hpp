@@ -16,10 +16,10 @@ class Font : public sf::Texture
 	typedef tps::IntRect Character;
 
   public:
+	Font();
 	Font(const std::string& path);
 
 	bool loaded()                              const;
-	const Character& operator()(char symbol)   const;
 	const Character& getCharacter(char symbol) const;
 	unsigned getCharacterSize()                const;
 	void loadCharacters(

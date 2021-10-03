@@ -12,7 +12,7 @@
 //----------------------------------------------------------------------------//
 game::LevelStart::LevelStart(Level* parent_level)
 	: LevelState(parent_level, tps::Vec2i{ WINDOW_WIDTH, WINDOW_HEIGHT / 2 })
-	, m_pStageText  { std::make_unique<renderer::Text2D>("pixel_font") }
+	, m_pStageText{ std::make_unique<renderer::Text2D>("pixel_font") }
 {
 	this->initText();
 	this->m_pBorder->setSize(this->m_BorderSize);

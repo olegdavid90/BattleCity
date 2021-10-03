@@ -6,10 +6,10 @@ namespace game::renderer {
 //----------------------------------------------------------------------------//
 Animator::Animator(const Sprite2D* pSprite)
 	: m_pSprite          { pSprite }
-	, m_CurrentTileNumber{}
+	, m_CurrentTileNumber{ 0 }
 	, m_DurationLeft     { this->m_pSprite->getTileDuration(this->m_CurrentTileNumber) }
 	, m_TilesCount       { this->m_pSprite->getTilesCount() }
-	, m_TotalDuration    {}
+	, m_TotalDuration    { 0 }
 {
 	for (unsigned noFrame{}; noFrame < this->m_pSprite->getTilesCount(); ++noFrame)
 	{

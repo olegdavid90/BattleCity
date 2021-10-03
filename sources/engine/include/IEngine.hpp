@@ -15,7 +15,7 @@ constexpr auto GAME_WIDTH              { BLOCKS_PER_GAME_WIDTH    * BLOCK_SIZE }
 constexpr auto GAME_HEIGHT             { BLOCKS_PER_GAME_HEIGHT   * BLOCK_SIZE };
 constexpr auto WINDOW_WIDTH            { BLOCKS_PER_WINDOW_WIDTH  * BLOCK_SIZE };
 constexpr auto WINDOW_HEIGHT           { BLOCKS_PER_WINDOW_HEIGHT * BLOCK_SIZE };
-constexpr auto WINDOW_SCALE            { 3.F };
+constexpr auto WINDOW_SCALE            { 2.F }; // FIXME
 constexpr auto WINDOW_ASPECT_RATIO     { static_cast<float>(WINDOW_WIDTH) / WINDOW_HEIGHT };
 constexpr auto GAME_TITLE              { "BATTLE CITY" };
 

@@ -16,6 +16,7 @@ class Texture2D : public sf::Texture
 	typedef tps::IntRect SubTexture;
 
   public:
+	Texture2D();
 	Texture2D(const std::string& path);
 
 	bool loaded() const;

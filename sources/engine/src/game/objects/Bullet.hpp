@@ -32,23 +32,21 @@ class Bullet : public DynamicObject
   public:
 	Bullet(class Tank* owner);
 
-	void update()                                    override;
-	std::size_t getID() const                        override;
-	void render()       const                        override;
-	bool isBullet()     const                        override;
-	bool isPlayer()     const                        override;
-	bool isDisabled()   const                        override;
-	void onCollision(const StaticObject* object)     override;
+	void update()                                override;
+	std::size_t getID() const                    override;
+	void render()       const                    override;
+	bool isBullet()     const                    override;
+	bool isPlayer()     const                    override;
+	bool isDisabled()   const                    override;
+	void onCollision(const StaticObject* object) override;
+  	void onCollisionWithBullet(Bullet* bullet)   override;
+	void onCollisionWithTank(Tank* tank)         override;
 
 	EBulletType getType() const;
 	bool isExplosion()    const;
 	void updateType();
 	void ResetState();
 	bool fire();
-
-  private:
-  	void onCollisionWithBullet(const Bullet* bullet) override;
-	void onCollisionWithTank(const Tank* tank)       override;
 
 
   private:

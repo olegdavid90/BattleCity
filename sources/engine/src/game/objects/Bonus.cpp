@@ -100,7 +100,7 @@ void game::Bonus::onCollision(DynamicObject* player_tank)
 
 	pPlayer->setScore(pPlayer->getScore() + 500);
 	this->m_isShowTime = true;
-	this->m_eObjectState = EObjectState::Destroyed;
+	this->m_eObjectState = EObjectState::Disabled;
 	this->m_pSprite = ResourcesManager::getSprite2D("score_500");
 	this->m_pSprite->setSize(this->getSize() * 2);
 

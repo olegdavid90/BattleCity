@@ -31,11 +31,11 @@
 
   "textures": [
     {
-      "name"            : "mapTextureAtlas_8x8",
-      "filePath"        : "textures/map_8x8.png",
-      "subTextureWidth" : 8,
-      "subTextureHeight": 8,
-      "subTextures": [
+      "name"             : "mapTextureAtlas_8x8",
+      "filePath"         : "textures/map_8x8.png",
+      "subTextureWidth"  : 8,
+      "subTextureHeight" : 8,
+      "subTextures" : [
         "brickWall_All",
         "brickWall_TopLeft",
         "brickWall_TopRight",
@@ -73,10 +73,10 @@
       ]
     },
     {
-      "name"            : "mapTextureAtlas_16x16",
-      "filePath"        : "textures/map_16x16.png",
-      "subTextureWidth" : 16,
-      "subTextureHeight": 16,
+      "name"             : "mapTextureAtlas_16x16",
+      "filePath"         : "textures/map_16x16.png",
+      "subTextureWidth"  : 16,
+      "subTextureHeight" : 16,
       "subTextures" : [
         "respawn1",
         "respawn2",
@@ -101,11 +101,11 @@
       ]
     },
     {
-      "name"            : "bigExplosionTextureAtlas",
-      "filePath"        : "textures/big_explosion.png",
-      "subTextureWidth" : 32,
-      "subTextureHeight": 32,
-      "subTextures": [
+      "name"             : "bigExplosionTextureAtlas",
+      "filePath"         : "textures/big_explosion.png",
+      "subTextureWidth"  : 32,
+      "subTextureHeight" : 32,
+      "subTextures" : [
         "bigExplosion1",
         "bigExplosion2",
         "bigExplosion3",
@@ -120,11 +120,11 @@
       ]
     },
     {
-      "name"            : "tanksTextureAtlas",
-      "filePath"        : "textures/tanks.png",
-      "subTextureWidth" : 16,
-      "subTextureHeight": 16,
-      "subTextures": [
+      "name"             : "tanksTextureAtlas",
+      "filePath"         : "textures/tanks.png",
+      "subTextureWidth"  : 16,
+      "subTextureHeight" : 16,
+      "subTextures" : [
         "player_small_top1",
         "player_small_top2",
         "player_small_left1",
@@ -269,19 +269,13 @@
       "subTextures" : [
         "icon"
       ]
-    },
+    }
+  ],
+
+  "sounds": [
     {
-      "name"             : "pixel_font",
-      "filePath"         : "textures/pixel_font.png",
-      "subTextureWidth"  : 8,
-      "subTextureHeight" : 8,
-      "subTextures" : [
-        "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
-        "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
-        "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".", ",", ";",
-        ":", "@", "#", "'", "!", "\"","/", "?", "{", "}", "%", "&", "*",
-        "(", ")", "$"
-      ]
+      "name"     : "level_start",
+      "filePath" : "audio/level_start.ogg"
     }
   ],
 

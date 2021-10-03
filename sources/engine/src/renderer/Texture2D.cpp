@@ -10,6 +10,11 @@ Texture2D::Texture2D(const std::string& path)
 }
 
 //----------------------------------------------------------------------------//
+Texture2D::Texture2D()
+	: m_isLoaded{ false }
+{ }
+
+//----------------------------------------------------------------------------//
 bool Texture2D::loaded() const
 {
 	return this->m_isLoaded;

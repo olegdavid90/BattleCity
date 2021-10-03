@@ -10,10 +10,10 @@
 //----------------------------------------------------------------------------//
 game::Enemies::Enemies(Level* parent_level)
 	: m_pParentLevel{ parent_level }
-	, m_GameTime    {}
-	, m_ActiveCount {}
+	, m_GameTime    { 0 }
+	, m_ActiveCount { 0 }
 	, m_maxActive   { 4 }
-	, m_LastAdded   {  }
+	, m_LastAdded   { 0 }
 	, m_isTimeToAdd { true }
 {
 	this->init();
@@ -108,7 +108,7 @@ void game::Enemies::correctTanksCount()
 		);
 	}
 }
-
+ 
 //----------------------------------------------------------------------------//
 void game::Enemies::removeTank()
 {

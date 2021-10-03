@@ -10,6 +10,17 @@ GameObject::GameObject(const tps::Vec2i& position, const tps::Vec2i& size)
 { }
 
 //----------------------------------------------------------------------------//
+tps::IntRect GameObject::getGlobalBounds() const
+{
+	if (this->isDisabled())
+	{
+		return tps::IntRect{};
+	}
+
+	return tps::IntRect{ this->getPosition(), this->getSize() };
+}
+
+//----------------------------------------------------------------------------//
 const tps::Vec2i& GameObject::getPosition() const
 {
 	return this->m_Position;
@@ -54,12 +65,6 @@ void GameObject::setSize(tps::Vec2i size)
 void GameObject::setSize(int width, int height)
 {
 	this->setSize(tps::Vec2i{ width, height });
-}
-
-//----------------------------------------------------------------------------//
-bool GameObject::isDestroyed() const
-{
-	return (this->m_eObjectState == EObjectState::Destroyed);
 }
 
 } /* !namespace game */

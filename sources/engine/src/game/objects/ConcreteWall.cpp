@@ -18,7 +18,7 @@ void game::ConcreteWall::onCollision(DynamicObject* object)
 	const Bullet* pBullet{ dynamic_cast<const Bullet*>(object) };
 	if (pBullet != nullptr && pBullet->getType() == EBulletType::Reinforced)
 	{
-		this->m_eObjectState = EObjectState::Destroyed;
+		this->m_eObjectState = EObjectState::Disabled;
 	}
 }
 

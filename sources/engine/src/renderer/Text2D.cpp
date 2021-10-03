@@ -14,8 +14,8 @@ Text2D::Text2D(const std::string& font_name)
 	, m_pShader      { ResourcesManager::getShaderProgram("textShader") }
 	, m_FillColor    { 0.F, 0.F, 0.F, 1.F }
 	, m_CharacterSize{ static_cast<float>(m_pFont->getCharacterSize()) }
-	, m_ColumnCount  {}
-	, m_RowCount     {}
+	, m_ColumnCount  { 0 }
+	, m_RowCount     { 0 }
 {
 	sf::RectangleShape::setTexture(this->m_pFont);
 	sf::RectangleShape::setSize(

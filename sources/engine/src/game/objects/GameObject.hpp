@@ -15,25 +15,25 @@ class GameObject
   public:
 	enum class EObjectState {
 		Enabled = 0,
-		Disabled,
-		Destroyed
+		Disabled
 	};
 
 	GameObject(const tps::Vec2i& position, const tps::Vec2i& size);
 	virtual ~GameObject() = default;
 
-	virtual void render() const = 0;
+	virtual void render() const                    = 0;
+	virtual void onCollision(class DynamicObject*) = 0;
 
 	virtual void update();
 	virtual void setPosition(const tps::Vec2i& position);
-	virtual void setPosition(int x, int y);
-	virtual void setSize(tps::Vec2i size);
-	virtual void setSize(int width, int height);
-	virtual bool isDestroyed() const;
 	virtual bool isDisabled() const;
 
+	void setPosition(int x, int y);
+	void setSize(tps::Vec2i size);
+	void setSize(int width, int height);
+	const tps::Vec2i& getSize()     const;
 	const tps::Vec2i& getPosition() const;
-	const tps::Vec2i& getSize() const;
+	tps::IntRect getGlobalBounds()  const;
 
 
   protected:

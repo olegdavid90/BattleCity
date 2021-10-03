@@ -34,7 +34,7 @@ Level::Level(Core* pCore)
 	, m_pGameOverText{ std::make_unique<renderer::Text2D>("pixel_font")}
 	, m_pPlayer      { this->m_pCore->getPlayer() }
 	, m_eLevelState  { ELevelState::Start }
-	, m_FramesCount  {}
+	, m_FramesCount  { 0 }
 	, m_isGameOver   { false }
 {
 	this->initText();
@@ -199,10 +199,14 @@ void Level::createBonus()
 {
 	this->m_pBonus = std::make_unique<Bonus>(this);
 
-	while (this->m_pBonus->getGlobalBounds().intersects(this->m_pPlayer->getGlobalBounds())
-		   || this->m_pBonus->getGlobalBounds().intersects(this->m_pEagle->getGlobalBounds()))
+	const tps::IntRect playerBounds{ this->m_pPlayer->getGlobalBounds() };
+	const tps::IntRect eagleBounds { this->m_pEagle->getGlobalBounds() };
+	tps::IntRect       bonusBounds { this->m_pBonus->getGlobalBounds() };
+
+	while (bonusBounds.intersects(playerBounds) || bonusBounds.intersects(eagleBounds))
 	{
 		this->m_pBonus->setPosition(Bonus::getRandomBonusPosition());
+		bonusBounds = this->m_pBonus->getGlobalBounds();
 	}
 }
 

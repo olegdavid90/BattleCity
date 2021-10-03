@@ -41,23 +41,23 @@ class Tank : public DynamicObject
 
 	virtual bool hasShield() const;
 
-	void setPosition(const tps::Vec2i& position)     override;
-	void setOrientation(EOrientation orientation)    override;
-	void onCollision(const StaticObject* object)     override;
-	bool isTank()       const                        override;
-	bool isPlayer()     const                        override;
-	bool isDisabled()   const                        override;
-	std::size_t getID() const                        override;
-
-	int getHealth()               const;
-	const Level* getParentLevel() const;
-	bool isRespawning()           const;
-	bool frontTileIsBarrier()     const;
-	void freeze(bool is_frozen);
-
-  private:
-  	void onCollisionWithBullet(const Bullet* bullet) override;
-	void onCollisionWithTank(const Tank* tank)       override;
+	void setPosition(const tps::Vec2i& position)  override;
+	void setOrientation(EOrientation orientation) override;
+	void onCollision(const StaticObject* object)  override;
+  	void onCollisionWithBullet(Bullet* bullet)    override;
+	void onCollisionWithTank(Tank* tank)          override;
+	bool isTank()       const                     override;
+	bool isPlayer()     const                     override;
+	bool isDisabled()   const                     override;
+	std::size_t getID() const                     override;
+												  
+	int getHealth()               const;		  
+	const Level* getParentLevel() const;		  
+	bool isRespawning()           const;		  
+	bool frontTileIsBarrier()     const;		  
+	void freeze(bool is_frozen);				  
+												  
+  private:										  
 	void alignmentPosition();
 
 

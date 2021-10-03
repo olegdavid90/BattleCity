@@ -2,8 +2,8 @@
 
 
 game::FramesTimer::FramesTimer()
-	: m_TimeLeft{}
-	, m_isRunning{}
+	: m_TimeLeft { 0 }
+	, m_isRunning{ 0 }
 { }
 
 

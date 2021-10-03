@@ -174,14 +174,10 @@ void BrickWall::onCollision(DynamicObject* object)
 	};
 
 	this->updateWallState(collisionDirection);
-	if (this->m_eWallState == EWallState::Destroyed)
-	{
-		this->m_GlobalBounds = tps::IntRect{};
-	}
 }
 
 //----------------------------------------------------------------------------//
-bool BrickWall::isDestroyed() const
+bool BrickWall::isDisabled() const
 {
 	return (this->m_eWallState == EWallState::Destroyed);
 }

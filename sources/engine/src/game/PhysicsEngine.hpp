@@ -26,7 +26,7 @@ class PhysicsEngine
 
   private:
 	bool resolveStaticCollision(DynamicObject* pDynamic_object);
-	bool resolveDynamicCollision(
+	void resolveDynamicCollision(
 		std::vector<DynamicObject*>::iterator itrDynamic_object
 	);
 

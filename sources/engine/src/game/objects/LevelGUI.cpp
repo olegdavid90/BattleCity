@@ -54,7 +54,7 @@ void game::LevelGUI::update()
 	);
 	this->m_LevelIndexText->setPosition(
 		WINDOW_WIDTH - BLOCK_SIZE - this->m_LevelIndexText->getSize().x,
-		BLOCK_SIZE * 24
+		BLOCK_SIZE * 23
 	);
 }
 

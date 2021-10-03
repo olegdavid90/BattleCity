@@ -20,11 +20,6 @@ class StaticObject : public GameObject
 	virtual bool collides(const class DynamicObject*) const;
 	virtual tps::IntRect getBoundsForBullet()         const;
 
-	const tps::IntRect& getGlobalBounds()             const;
-
-  protected:
-	tps::IntRect  m_GlobalBounds{ this->getPosition(), this->getSize()};
-
 }; /* !class StaticObject */
 
 

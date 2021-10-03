@@ -32,7 +32,7 @@ class BrickWall : public StaticObject
 
 	tps::IntRect getBoundsForBullet() const override;
 	void render()                     const override;
-	bool isDestroyed()                const override;
+	bool isDisabled()                 const override;
 	void onCollision(DynamicObject* object) override;
 
   private:

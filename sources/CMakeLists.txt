@@ -14,7 +14,8 @@ add_subdirectory("engine")
 
 set(SOURCES "src/main.cpp" "${RESOURCE_DIR}/resources.json")
 
-add_executable(${PROJECT_NAME} WIN32 ${SOURCES})
+#add_executable(${PROJECT_NAME} WIN32 ${SOURCES})
+add_executable(${PROJECT_NAME} ${SOURCES})
 
 message(${CMAKE_SOURCE_DIR})
 target_link_libraries(${PROJECT_NAME} "engine")

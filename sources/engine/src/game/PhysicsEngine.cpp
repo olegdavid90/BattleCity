@@ -5,7 +5,6 @@
 #include "game/states/Level.hpp"
 
 #include <utility>
-#include <typeinfo>
 
 namespace game {
 
@@ -49,7 +48,7 @@ void PhysicsEngine::update()
 //----------------------------------------------------------------------------//
 bool PhysicsEngine::resolveStaticCollision(DynamicObject* pDynamic_object)
 {
-	bool hasCollision{};
+	bool hasCollision{ false };
 
 	const auto dynamicObjectBounds { pDynamic_object->getGlobalBounds() };
 	const auto staticObjectsToCheck{
@@ -78,12 +77,10 @@ bool PhysicsEngine::resolveStaticCollision(DynamicObject* pDynamic_object)
 }
 
 //----------------------------------------------------------------------------//
-bool PhysicsEngine::resolveDynamicCollision(
+void PhysicsEngine::resolveDynamicCollision(
 	std::vector<DynamicObject*>::iterator itrDynamic_object
 )
 {
-	bool hasCollision{};
-
 	for (auto itrObject2{ std::next(itrDynamic_object) };
 		itrObject2 != m_pDynamicObjects.end();
 		++itrObject2)
@@ -96,21 +93,10 @@ bool PhysicsEngine::resolveDynamicCollision(
 
 		if (pObject1->getGlobalBounds().intersects((pObject2)->getGlobalBounds()))
 		{
-			hasCollision = true;
-			if (pObject1->isBullet())
-			{
-				pObject2->onCollision(pObject1);
-				pObject1->onCollision(pObject2);
-			}
-			else
-			{
-				pObject1->onCollision(pObject2);
-				pObject2->onCollision(pObject1);
-			}
+			pObject1->onCollision(pObject2);
+			pObject2->onCollision(pObject1);
 		}
 	}
-
-	return hasCollision;
 }
 
 

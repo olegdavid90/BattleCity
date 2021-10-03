@@ -100,26 +100,23 @@ void Tank::onCollision(const StaticObject* object)
 }
 
 //----------------------------------------------------------------------------//
-void Tank::onCollisionWithBullet(const Bullet* bullet)
-{
-	if (this->isRespawning() || this->hasShield() || bullet->isExplosion())
-	{ return; }
-
-	if (bullet->isPlayer() != this->isPlayer())
-	{
-		this->destroy(true);
-	}
-}
+void Tank::onCollisionWithBullet(Bullet* bullet)
+{ }
 
 //----------------------------------------------------------------------------//
-void Tank::onCollisionWithTank(const Tank* other)
+void Tank::onCollisionWithTank(Tank* other_tank)
 {
 	if (this->isRespawning() || this->m_isFrozen)
 	{ return; }
 
-	const tps::Vec2i otherTankPosition{ other->getPosition() };
+	const tps::Vec2i otherTankPosition{ other_tank->getPosition() };
 
-	if (this->isPlayer() == false)
+	if (this->isPlayer())
+	{
+		this->stop();
+		DynamicObject::setPosition(this->m_oldPosition);
+	}
+	else
 	{
 		switch (this->getOrientation())
 		{
@@ -128,31 +125,28 @@ void Tank::onCollisionWithTank(const Tank* other)
 			{
 				this->setOrientation(EOrientation::Bottom);
 			}
-			return;
+			break;
 		case EOrientation::Bottom:
 			if (this->getPosition().y < otherTankPosition.y)
 			{
 				this->setOrientation(EOrientation::Top);
 			}
-			return;
+			break;
 		case EOrientation::Left:
 			if (this->getPosition().x > otherTankPosition.x)
 			{
 				this->setOrientation(EOrientation::Right);
 			}
-			return;
+			break;
 		case EOrientation::Right:
 			if (this->getPosition().x < otherTankPosition.x)
 			{
 				this->setOrientation(EOrientation::Left);
 			}
-			return;
-		default: return;
+			break;
+		default: break;
 		}
 	}
-
-	this->stop();
-	DynamicObject::setPosition(this->m_oldPosition);
 }
 
 //----------------------------------------------------------------------------//

@@ -4,8 +4,15 @@
 namespace game::renderer {
 
 //----------------------------------------------------------------------------//
+
+Font::Font()
+	: m_CharacterSize{ 0 }
+	, m_isLoaded     { false }
+{ }
+
+//----------------------------------------------------------------------------//
 Font::Font(const std::string& path)
-	: m_CharacterSize{}
+	: m_CharacterSize{ 0 }
 {
 	this->m_isLoaded = sf::Texture::loadFromFile(path);
 }
@@ -14,20 +21,6 @@ Font::Font(const std::string& path)
 bool Font::loaded() const
 {
 	return this->m_isLoaded;
-}
-
-//----------------------------------------------------------------------------//
-const Font::Character& Font::operator()(char symbol) const
-{
-	if (auto itrTexture{ this->m_Characters.find(symbol) };
-		itrTexture != this->m_Characters.end())
-	{
-		return itrTexture->second;
-	}
-
-	LOG_WARN("Not found symbol: '{}'", symbol);
-	static const Character emptyCharacter{};
-	return emptyCharacter;
 }
 
 //----------------------------------------------------------------------------//

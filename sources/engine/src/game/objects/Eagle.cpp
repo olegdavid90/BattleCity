@@ -17,16 +17,16 @@ game::Eagle::Eagle(class Level* parent_level)
 //----------------------------------------------------------------------------//
 void game::Eagle::render() const
 {
-	this->m_pSprite->render(this->getPosition(), this->isDestroyed() ? 1U : 0U);
+	this->m_pSprite->render(this->getPosition(), this->isDisabled() ? 1U : 0U);
 }
 
 //----------------------------------------------------------------------------//
 void game::Eagle::onCollision(DynamicObject* object)
 {
-	if (object->isBullet() == false || object->isPlayer() || this->isDestroyed())
+	if (object->isBullet() == false || object->isPlayer() || this->isDisabled())
 	{ return; }
 
-	this->m_eObjectState = EObjectState::Destroyed;
+	this->m_eObjectState = EObjectState::Disabled;
 	this->m_pParentLevel->setExplosion(this->getPosition());
 	this->m_pParentLevel->startGameOver();
 

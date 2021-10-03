@@ -81,9 +81,9 @@ bool ResourcesManager::load(const std::string& relative_path)
 			std::vector<std::string> subTexturesNames{};
 			subTexturesNames.reserve(subTexturesArray.Size());
 
-			for (const auto& currentSubTexture : subTexturesArray)
+			for (const auto& currentName : subTexturesArray)
 			{
-				subTexturesNames.emplace_back(currentSubTexture.GetString());
+				subTexturesNames.emplace_back(currentName.GetString());
 			}
 
 			loadTexture2D(
@@ -106,9 +106,9 @@ bool ResourcesManager::load(const std::string& relative_path)
 			std::vector<std::string> charactersNames{};
 			charactersNames.reserve(charactersArray.Size());
 
-			for (const auto& currentSubTexture : charactersArray)
+			for (const auto& currentName : charactersArray)
 			{
-				charactersNames.emplace_back(currentSubTexture.GetString());
+				charactersNames.emplace_back(currentName.GetString());
 			}
 
 			loadFont(
@@ -280,8 +280,7 @@ bool ResourcesManager::loadTexture2D(
 		std::make_unique<renderer::Texture2D>(RESOURCE_PATH + relative_path)
 	);
 
-	if (auto texture2D{ getTexture2D(texture_name) };
-		texture2D != nullptr && texture2D->loaded())
+	if (auto texture2D{ getTexture2D(texture_name) }; texture2D->loaded())
 	{
 		texture2D->loadSubTextures(
 			subtexture_width, subtexture_height, subtextures_names
@@ -306,8 +305,7 @@ bool ResourcesManager::loadFont(
 		std::make_unique<renderer::Font>(RESOURCE_PATH + relative_path)
 	);
 
-	if (auto font{ getFont(font_name) };
-		font != nullptr && font->loaded())
+	if (auto font{ getFont(font_name) }; font->loaded())
 	{
 		font->loadCharacters(character_size, characters_names);
 		return true;
@@ -327,7 +325,9 @@ ResourcesManager::getTexture2D(const std::string& texture_name)
 		return itrTexture->second.get();
 	}
 
-	return nullptr;
+	LOG_ERROR("RESOURCES_MANAGER::Can't find texture: '{}'", texture_name);
+	static renderer::Texture2D emptyTexture{};
+	return std::addressof(emptyTexture);
 }
 
 //----------------------------------------------------------------------------//
@@ -339,7 +339,9 @@ renderer::Font* ResourcesManager::getFont(const std::string& font_name)
 		return itrFont->second.get();
 	}
 
-	return nullptr;
+	LOG_ERROR("RESOURCES_MANAGER::Can't find font: '{}'", font_name);
+	static renderer::Font emptyFont{};
+	return std::addressof(emptyFont);
 }
 
 //----------------------------------------------------------------------------//

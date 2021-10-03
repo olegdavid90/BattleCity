@@ -56,7 +56,6 @@ std::size_t Bullet::getID() const
 	return this->m_Owner->getID();
 }
 
-
 //----------------------------------------------------------------------------//
 void Bullet::update()
 {
@@ -154,7 +153,7 @@ void Bullet::onCollision(const StaticObject* object)
 }
 
 //----------------------------------------------------------------------------//
-void Bullet::onCollisionWithBullet(const Bullet*)
+void Bullet::onCollisionWithBullet(Bullet* other_bullet)
 {
 	if (this->isExplosion() || this->isDisabled())
 	{ return; }
@@ -164,7 +163,7 @@ void Bullet::onCollisionWithBullet(const Bullet*)
 }
 
 //----------------------------------------------------------------------------//
-void Bullet::onCollisionWithTank(const Tank* tank)
+void Bullet::onCollisionWithTank(Tank* tank)
 {
 	if (this->isExplosion() || this->isDisabled() || tank->isRespawning())
 	{ return; }
@@ -179,6 +178,7 @@ void Bullet::onCollisionWithTank(const Tank* tank)
 
 	this->m_eBulletState = EBulletState::Explosion;
 	this->m_ExplosionTimer.start(this->m_ExplosionAnimator.getTotalDuration());
+	tank->destroy(true);
 }
 
 //----------------------------------------------------------------------------//

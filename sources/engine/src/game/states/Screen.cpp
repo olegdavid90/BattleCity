@@ -21,7 +21,7 @@ game::Screen::Screen(Core* pCore, EGameState screen_type)
     , m_pTankSprite     { ResourcesManager::getSprite2D("player_03") }
     , m_TankAnimator    { this->m_pTankSprite }
     , m_maxMenuSelection{ 1 }
-    , m_MenuSelection   {}
+    , m_MenuSelection   { 0 }
     , m_Keys            { false }
     , m_isShowTime      { true }
 {

@@ -13,12 +13,6 @@ const tps::Vec2i& DynamicObject::getDirection() const
 }
 
 //----------------------------------------------------------------------------//
-tps::IntRect DynamicObject::getGlobalBounds() const
-{
-	return tps::IntRect{ this->getPosition(), this->getSize() };
-}
-
-//----------------------------------------------------------------------------//
 void DynamicObject::start()
 {
 	this->m_isMoving = true;
@@ -55,15 +49,15 @@ DynamicObject::EOrientation DynamicObject::getOrientation() const
 }
 
 //----------------------------------------------------------------------------//
-void DynamicObject::onCollision(const DynamicObject* object)
+void DynamicObject::onCollision(DynamicObject* object)
 {
 	if (object->isTank())
 	{
-		this->onCollisionWithTank(dynamic_cast<const Tank*>(object));
+		this->onCollisionWithTank(dynamic_cast<Tank*>(object));
 	}
 	else
 	{
-		this->onCollisionWithBullet(dynamic_cast<const Bullet*>(object));
+		this->onCollisionWithBullet(dynamic_cast<Bullet*>(object));
 	}
 }
 
