@@ -1,3 +1,4 @@
 sources/build/*
 bin/Debug/*
 bin/Release/*
+!.gitkeep
