@@ -29,8 +29,6 @@ set(
 		"src/renderer/MainWindow.cpp"
 		"src/renderer/ShaderProgram.hpp"
 		"src/renderer/ShaderProgram.cpp"
-		"src/audio/SoundBuffer.hpp"
-		"src/audio/SoundBuffer.cpp"
 		"src/game/Core.hpp"
 		"src/game/Core.cpp"
 		"src/game/InputHandler.hpp"

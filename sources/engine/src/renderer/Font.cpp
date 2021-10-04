@@ -13,9 +13,8 @@ Font::Font()
 //----------------------------------------------------------------------------//
 Font::Font(const std::string& path)
 	: m_CharacterSize{ 0 }
-{
-	this->m_isLoaded = sf::Texture::loadFromFile(path);
-}
+	, m_isLoaded     { sf::Texture::loadFromFile(path) }
+{ }
 
 //----------------------------------------------------------------------------//
 bool Font::loaded() const

@@ -5,9 +5,8 @@ namespace game::renderer {
 
 //----------------------------------------------------------------------------//
 Texture2D::Texture2D(const std::string& path)
-{
-	this->m_isLoaded = sf::Texture::loadFromFile(path);
-}
+	: m_isLoaded{ sf::Texture::loadFromFile(path) }
+{ }
 
 //----------------------------------------------------------------------------//
 Texture2D::Texture2D()
