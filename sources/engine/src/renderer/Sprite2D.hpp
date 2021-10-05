@@ -25,12 +25,12 @@ class Sprite2D : public sf::RectangleShape
 	};
 
   public:
+	Sprite2D();
 	Sprite2D(
 		class ShaderProgram* shader,
 		const class Texture2D* pTexture2D,
 		std::vector<Tile> frames
 	);
-	using sf::RectangleShape::RectangleShape;
 
 	void render(const tps::Vec2i& position, const tps::Vec2i& size);
 	void render(const tps::Vec2i& position, unsigned tile_number);

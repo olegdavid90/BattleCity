@@ -29,6 +29,8 @@ set(
 		"src/renderer/MainWindow.cpp"
 		"src/renderer/ShaderProgram.hpp"
 		"src/renderer/ShaderProgram.cpp"
+		"src/audio/SoundBuffer.hpp"
+		"src/audio/SoundBuffer.cpp"
 		"src/game/Core.hpp"
 		"src/game/Core.cpp"
 		"src/game/InputHandler.hpp"
@@ -98,14 +100,12 @@ set(
 )
 
 add_library(${PROJECT_NAME} STATIC ${SOURCES})
-
 target_compile_features(${PROJECT_NAME} PUBLIC "cxx_std_17")
-
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${SOURCES})
 
 if(WIN32)
-	set(SFML_DIR "external/SFML-2.5.1/windows/SFML/lib/cmake/SFML")
 	set(SFML_STATIC_LIBRARIES TRUE)
+	set(SFML_DIR "external/SFML-2.5.1/windows/SFML/lib/cmake/SFML")
 	find_package(SFML 2.5 COMPONENTS "graphics" "audio" "main" REQUIRED)
 	if(SFML_FOUND)
 		target_link_libraries(
@@ -123,7 +123,7 @@ endif(WIN32)
 
 target_include_directories(${PROJECT_NAME} PUBLIC "include")
 target_include_directories(
-	${PROJECT_NAME} PRIVATE ${SFML_INCLUDE_DIR} "src" "external/rapidjson/include"
+	${PROJECT_NAME} PRIVATE "src" "external/rapidjson/include"
 )
 
 add_subdirectory("external/spdlog")

@@ -272,6 +272,13 @@
     }
   ],
 
+  "sounds" : [
+    {
+      "name"     : "level_start",
+      "filePath" : "audio/level_start.ogg"
+    }
+  ],
+
 	"sprites" : [
     {
       "name"     : "brickWall_All",

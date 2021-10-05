@@ -181,7 +181,7 @@ void game::PlayerTank::addStar()
 void game::PlayerTank::updateInput()
 {
 	static bool keys[6];
-	InputHandler().update(keys);
+	InputHandler::update(keys);
 
 	if (keys[KEY_J])
 	{ this->fire(); }

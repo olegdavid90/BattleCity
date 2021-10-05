@@ -79,7 +79,7 @@ void game::Screen::initText()
 //----------------------------------------------------------------------------//
 void game::Screen::updateInput()
 {
-    InputHandler().update(this->m_Keys);
+    InputHandler::update(this->m_Keys);
 
     static bool isKeyReleased{ false };
     if (this->m_Keys[KEY_W] == false && this->m_Keys[KEY_S] == false)

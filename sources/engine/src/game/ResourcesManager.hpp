@@ -15,7 +15,8 @@ namespace renderer {
 	class Font;
 	class Sprite2D;
 } /* !namespace renderer */
-	
+
+namespace audio { class SoundBuffer; }
 
 class ResourcesManager
 {
@@ -28,6 +29,8 @@ class ResourcesManager
 		FontsMap;
 	typedef std::unordered_map<std::string, std::unique_ptr<renderer::Sprite2D>> 
 		SpritesMap;
+	typedef std::unordered_map<std::string, std::unique_ptr<audio::SoundBuffer>>
+		SoundBuffersMap;
 	typedef std::unordered_map<std::string, std::vector<std::string>>
 		TitlesDescriptionsMap;
 
@@ -86,6 +89,7 @@ class ResourcesManager
 	static TexturesMap                            m_Textures;
 	static FontsMap                               m_Fonts;
 	static SpritesMap                             m_Sprites;
+	static SoundBuffersMap                        m_SoundBuffers;
 	static TitlesDescriptionsMap                  m_TitlesDescriptions;
 	static std::vector<std::vector<std::string>>  m_LevelsDescriptions;
 	static std::vector<std::array<unsigned, 4>>   m_EnemyTanksCounts;

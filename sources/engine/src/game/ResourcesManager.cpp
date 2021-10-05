@@ -7,6 +7,7 @@
 #include "renderer/Texture2D.hpp"
 #include "renderer/Font.hpp"
 #include "renderer/Sprite2D.hpp"
+#include "audio/SoundBuffer.hpp"
 
 #include <rapidjson/document.h>
 #include <rapidjson/error/en.h>
@@ -18,6 +19,7 @@ namespace game {
 ResourcesManager::ShadersMap             ResourcesManager::m_Shaders;
 ResourcesManager::TexturesMap            ResourcesManager::m_Textures;
 ResourcesManager::FontsMap               ResourcesManager::m_Fonts;
+ResourcesManager::SoundBuffersMap        ResourcesManager::m_SoundBuffers;
 ResourcesManager::SpritesMap             ResourcesManager::m_Sprites;
 ResourcesManager::TitlesDescriptionsMap  ResourcesManager::m_TitlesDescriptions;
 std::vector<std::vector<std::string>>    ResourcesManager::m_LevelsDescriptions;
@@ -353,8 +355,6 @@ bool ResourcesManager::loadSprite2D(
 )
 {
 	auto texture{ getTexture2D(texture_name) };
-	if (texture == nullptr)
-	{ return false; }
 
 	std::vector<renderer::Sprite2D::Tile> tiles;
 	tiles.reserve(tiles_description.size());

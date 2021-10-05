@@ -1,10 +1,17 @@
 #include "Sprite2D.hpp"
+#include "IEngine.hpp"
+#include "system/log.hpp"
 #include "Texture2D.hpp"
 #include "renderer/MainWindow.hpp"
 #include "renderer/ShaderProgram.hpp"
 
 namespace game::renderer {
-	
+
+//----------------------------------------------------------------------------//
+Sprite2D::Sprite2D()
+	: m_pShader{ nullptr }
+{ }
+
 //----------------------------------------------------------------------------//
 Sprite2D::Sprite2D(
 	ShaderProgram* shader,

@@ -3,7 +3,6 @@ cmake_minimum_required(VERSION 3.8)
 project("BattleCity")
 
 set(RESOURCE_DIR "${CMAKE_SOURCE_DIR}/../resources")
-
 configure_file(
 	"resources_path.h.in"
 	"${CMAKE_SOURCE_DIR}/engine/src/resources_path.h"
@@ -11,14 +10,9 @@ configure_file(
 )
 
 add_subdirectory("engine")
-
 set(SOURCES "src/main.cpp" "${RESOURCE_DIR}/resources.json")
-
 add_executable(${PROJECT_NAME} WIN32 ${SOURCES})
-
-message(${CMAKE_SOURCE_DIR})
 target_link_libraries(${PROJECT_NAME} "engine")
-
 target_compile_features(${PROJECT_NAME} PUBLIC "cxx_std_17")
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)

@@ -1,13 +1,13 @@
 #include "Core.hpp"
-#include "game/objects/tanks/PlayerTank.hpp"
 #include "system/log.hpp"
 #include "system/utils.hpp"
 #include "renderer/MainWindow.hpp"
 #include "ResourcesManager.hpp"
 #include "game/states/Level.hpp"
 #include "game/states/PauseScreen.hpp"
-#include "game/states/GameOverScreen.hpp"
 #include "game/states/StartScreen.hpp"
+#include "game/states/GameOverScreen.hpp"
+#include "game/objects/tanks/PlayerTank.hpp"
 
 #include <string>
 #include <sstream>
