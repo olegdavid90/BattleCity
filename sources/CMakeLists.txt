@@ -21,14 +21,14 @@ set_property(
 		VS_STARTUP_PROJECT ${PROJECT_NAME}
 )
 
-set_target_properties(
-	${PROJECT_NAME} PROPERTIES
-		RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/../bin"
-)
-
-add_custom_command(
-	TARGET ${PROJECT_NAME} POST_BUILD
-		COMMAND ${CMAKE_COMMAND} -E remove_directory
-			"${CMAKE_CURRENT_BINARY_DIR}/Debug"
-			"${CMAKE_CURRENT_BINARY_DIR}/Release"
-)
+#set_target_properties(
+#	${PROJECT_NAME} PROPERTIES
+#		RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/../bin"
+#)
+#
+#add_custom_command(
+#	TARGET ${PROJECT_NAME} POST_BUILD
+#		COMMAND ${CMAKE_COMMAND} -E remove_directory
+#			"${CMAKE_CURRENT_BINARY_DIR}/Debug"
+#			"${CMAKE_CURRENT_BINARY_DIR}/Release"
+#)
