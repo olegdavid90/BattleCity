@@ -116,6 +116,7 @@ void game::PlayerTank::Reset()
 	this->m_eTankState = ETankState::Respawn;
 	this->m_eSubType   = ESubType::Small;
 	this->setPosition(PLAYER_RESPAWN_POSITION);
+	this->m_oldPosition = PLAYER_RESPAWN_POSITION;
 	this->loadSprites();
 	this->m_RespawnTimer.start(1);
 }
